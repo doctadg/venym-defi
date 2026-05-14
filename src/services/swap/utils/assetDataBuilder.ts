@@ -1,5 +1,5 @@
 import { StandardizedAsset } from '@/types/asset';
-import { ChainMappingService } from '@/lib/chains/chainMapping';
+import { ChainMappingService } from '@/services/swap/chainMapping';
 
 /**
  * Utility to construct StandardizedAsset data from raw quote responses

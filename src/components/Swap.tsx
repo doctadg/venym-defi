@@ -6,7 +6,7 @@ import { ArrowDownUp, Search, ChevronDown, AlertCircle, CheckCircle2, Clock, Loa
 import { cn } from '@/lib/utils';
 import { useSwap } from '@/hooks/useSwap';
 import { useSwapTokens } from '@/hooks/useSwapTokens';
-import { ChainMappingService } from '@/lib/swap/chainMapping';
+import { ChainMappingService } from '@/services/swap/chainMapping';
 import { StandardizedAsset } from '@/types/swap';
 import SwapTokenModal from '@/components/swap/SwapTokenModal';
 import SwapChainSelector from '@/components/SwapChainSelector';

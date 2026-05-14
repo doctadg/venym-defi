@@ -1,5 +1,5 @@
 import { UnifiedQuote, StandardizedAsset } from '@/types/swap';
-import { ChainMappingService } from '@/lib/swap/chainMapping';
+import { ChainMappingService } from '@/services/swap/chainMapping';
 
 const LIFI_API_URL = 'https://li.quest/v1';
 const SIDESHIFT_API_URL = 'https://sideshift.ai/api/v2';

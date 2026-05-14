@@ -1,4 +1,4 @@
-import { ChainMappingService } from '@/lib/chains/chainMapping';
+import { ChainMappingService } from '@/services/swap/chainMapping';
 
 export interface FormattedAsset {
   chainName: string;

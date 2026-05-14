@@ -6,7 +6,7 @@ import {
   SideShiftShiftStatus,
   SideShiftVariableShift,
 } from "./types";
-import { ChainMappingService } from '@/lib/chains/chainMapping';
+import { ChainMappingService } from '@/services/swap/chainMapping';
 import logger from '@/lib/logger';
 
 const SIDESHIFT_API_URL = "https://sideshift.ai/api/v2";

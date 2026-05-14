@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { ChainMapping } from '@/types/swap';
-import { CHAIN_MAPPINGS, ChainMappingService } from '@/lib/swap/chainMapping';
+import { CHAIN_MAPPINGS, ChainMappingService } from '@/services/swap/chainMapping';
 import { ChevronDown } from 'lucide-react';
 
 interface SwapChainSelectorProps {

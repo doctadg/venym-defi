@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { StandardizedAsset } from '@/types/swap';
 import { swapApi } from '@/services/swap/swapApi';
-import { ChainMappingService } from '@/lib/swap/chainMapping';
+import { ChainMappingService } from '@/services/swap/chainMapping';
 
 const CACHE_KEY = 'venym_swap_tokens';
 const CACHE_DURATION = 6 * 60 * 60 * 1000; // 6 hours

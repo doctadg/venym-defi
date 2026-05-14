@@ -180,6 +180,9 @@ const AccessGate = ({ children }: AccessGateProps) => {
     return <LoadingSpinner />
   }
 
+  // Waitlist disabled — open access
+  return <>{children}</>
+
   const hasServerAccessCode = user?.referred_by != null
   const hasAccessCode = localAccessGranted || hasServerAccessCode
   const needsUsername = user && !user.username

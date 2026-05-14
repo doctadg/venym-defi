@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { StandardizedAsset } from '@/types/swap';
-import { ChainMappingService } from '@/lib/swap/chainMapping';
+import { ChainMappingService } from '@/services/swap/chainMapping';
 import { Search, X } from 'lucide-react';
 
 interface SwapTokenModalProps {

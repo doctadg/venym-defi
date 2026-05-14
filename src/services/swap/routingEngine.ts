@@ -1,9 +1,9 @@
 import { SideShiftProvider, UnifiedShiftResponse } from './sideshift';
 import { LiFiProvider, LiFiQuote } from './lifi';
-import { SideShiftQuote } from './sideshift/types';
+import { SideShiftQuote } from '../providers/types';
 import { TokenService } from '@/lib/tokenService';
 import { PlaceholderAddressService } from '@/lib/placeholderAddresses';
-import { ChainMappingService } from '@/lib/chains/chainMapping';
+import { ChainMappingService } from '@/services/swap/chainMapping';
 import { QuoteValidator } from './quoteValidator';
 import { QuoteCacheManager } from './quoteCacheManager';
 import { v4 as uuidv4 } from 'uuid';
