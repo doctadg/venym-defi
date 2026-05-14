@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
-import Joyride, { CallBackProps, STATUS, EVENTS, ACTIONS, Step } from 'react-joyride';
+import { Joyride, CallBackProps, STATUS, EVENTS, ACTIONS, Step } from 'react-joyride';
 import { useTour, TourType } from '../../contexts/TourContext';
 import {
   onboardingSteps,
@@ -105,11 +105,11 @@ const TourProviderComponent: React.FC<TourProviderProps> = ({ children }) => {
           styles={{
             options: {
               zIndex: 10000,
-              arrowColor: '#14192F',
-              backgroundColor: '#14192F',
+              arrowColor: '#121212',
+              backgroundColor: '#121212',
               overlayColor: 'rgba(0, 0, 0, 0.7)',
-              primaryColor: '#1e40c6',
-              textColor: '#BBBBBB',
+              primaryColor: 'rgba(255,255,255,0.9)',
+              textColor: '#8E8E8E',
             },
             spotlight: {
               borderRadius: 12,

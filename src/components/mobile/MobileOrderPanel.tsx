@@ -159,7 +159,7 @@ const MobileOrderPanel: React.FC<MobileOrderPanelProps> = ({
     const displaySymbol = activeSymbol.split('/')[0];
 
     return (
-        <div className="flex flex-col gap-3 p-4 bg-[#14192F] rounded-t-2xl">
+        <div className="flex flex-col gap-3 p-4 bg-[#121212] rounded-t-2xl">
             {/* Margin Type & Leverage Row */}
             <div className="flex items-center gap-2">
                 <button
@@ -176,7 +176,7 @@ const MobileOrderPanel: React.FC<MobileOrderPanelProps> = ({
             </div>
 
             {/* Buy/Sell Tabs */}
-            <div className="flex bg-[#0A0E17] rounded-xl p-1">
+            <div className="flex bg-[#050505] rounded-xl p-1">
                 <button
                     onClick={() => setSide(OrderSide.LONG)}
                     className={`flex-1 py-2.5 rounded-lg text-sm font-medium transition-all ${side === OrderSide.LONG
@@ -246,7 +246,7 @@ const MobileOrderPanel: React.FC<MobileOrderPanelProps> = ({
                     onChange={(e) => setSizePercent(parseInt(e.target.value))}
                     className="w-full h-1.5 appearance-none cursor-pointer rounded-full"
                     style={{
-                        background: `linear-gradient(to right, #1e40c6 0%, #1e40c6 ${sizePercent}%, rgba(255,255,255,0.1) ${sizePercent}%, rgba(255,255,255,0.1) 100%)`,
+                        background: `linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) ${sizePercent}%, rgba(255,255,255,0.1) ${sizePercent}%, rgba(255,255,255,0.1) 100%)`,
                     }}
                 />
             </div>
@@ -258,7 +258,7 @@ const MobileOrderPanel: React.FC<MobileOrderPanelProps> = ({
                         key={percent}
                         onClick={() => setSizePercent(percent)}
                         className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-all ${sizePercent === percent
-                            ? 'bg-brand-gold text-white'
+                            ? 'bg-white/90 text-white'
                             : 'bg-white/5 text-[#8E8E8E] hover:text-white'
                             }`}
                     >

@@ -1,11 +1,11 @@
 import { Providers } from '@/components/Providers'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Manrope } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-satoshi' })
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-geist' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains' })
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title:
-    'Tide - Perpetuals DEX Aggregator | Trade Across Hyperliquid, Aster & Lighter',
+    'Venym - Perpetuals DEX Aggregator | Trade Across Hyperliquid, Aster & Lighter',
   description:
     'Trade perpetual futures across multiple decentralized exchanges with optimal routing. Real-time order books, advanced charting, and unified portfolio management.',
   icons: {
@@ -29,13 +29,13 @@ export const metadata: Metadata = {
       version: 'next',
       imageUrl: 'https://app.tide.ag/tidescreen.png',
       button: {
-        title: 'Join the Tide',
+        title: 'Open Venym',
         action: {
           type: 'launch_frame',
-          name: 'Launch Tide',
+          name: 'Launch Venym',
           url: 'https://app.tide.ag',
           splashImageUrl: 'https://app.tide.ag/tide-base.png',
-          splashBackgroundColor: '#0A0E17',
+          splashBackgroundColor: '#050505',
         },
       },
     }),
@@ -54,7 +54,7 @@ export default function RootLayout({
         <link rel="preload" href="/bg.jpg" as="image" />
       </head>
       <body
-        className={`${manrope.variable} ${inter.variable} font-sans bg-[#0A0E17] text-white`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-[#050505] text-[#e4e4e7]`}
       >
         <Providers>{children}</Providers>
         <Toaster
@@ -62,9 +62,9 @@ export default function RootLayout({
           toastOptions={{
             duration: 4000,
             style: {
-              background: '#14192F',
-              color: '#fff',
-              border: '1px solid rgba(30, 64, 198, 0.3)',
+              background: '#121212',
+              color: '#e4e4e7',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
               borderRadius: '16px',
               fontSize: '14px',
               backdropFilter: 'blur(10px)',
@@ -72,13 +72,13 @@ export default function RootLayout({
             success: {
               iconTheme: {
                 primary: '#56C0A6',
-                secondary: '#1e2544',
+                secondary: '#121212',
               },
             },
             error: {
               iconTheme: {
                 primary: '#E25C5C',
-                secondary: '#1e2544',
+                secondary: '#121212',
               },
             },
           }}

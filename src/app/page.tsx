@@ -85,7 +85,7 @@ function HomeContent() {
   };
 
   return (
-    <div className="h-screen bg-bg flex flex-col font-geist selection:bg-brand-gold selection:text-white overflow-hidden">
+    <div className="h-screen bg-bg flex flex-col font-sans selection:bg-white/90 selection:text-black overflow-hidden">
       {/* Desktop Header */}
       <div className="hidden md:block">
         <Header

@@ -9,11 +9,11 @@ export async function GET() {
         },
         miniapp: {
             version: "1",
-            name: "Tide",
+            name: "Venym",
             homeUrl: URL,
             iconUrl: `${URL}/tide-base.png`,
             splashImageUrl: `${URL}/tide-base.png`,
-            splashBackgroundColor: "#0A0E17",
+            splashBackgroundColor: "#050505",
             webhookUrl: `${URL}/api/webhook`,
             subtitle: "Perps DEX Aggregator",
             description: "Trade perpetual futures across Hyperliquid, Aster & Lighter with optimal routing. Real-time order books, advanced charting, and unified portfolio management.",
@@ -26,7 +26,7 @@ export async function GET() {
             tags: ["trading", "perps", "defi", "aggregator"],
             heroImageUrl: `${URL}/og-image.png`,
             tagline: "Trade Smarter",
-            ogTitle: "Tide - Perps DEX Aggregator",
+            ogTitle: "Venym - Perps DEX Aggregator",
             ogDescription: "Trade perpetual futures across multiple DEXs with optimal routing.",
             ogImageUrl: `${URL}/og-image.png`,
             noindex: false

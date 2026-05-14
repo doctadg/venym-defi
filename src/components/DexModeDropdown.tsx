@@ -53,7 +53,7 @@ const DexModeDropdown = () => {
     <div id="dex-mode-selector" className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 bg-[#1e2544] border border-border rounded-lg hover:bg-[#1e40c6]/40 transition-colors"
+        className="flex items-center gap-2 px-3 py-2 bg-[#121212] border border-border rounded-lg hover:bg-white/10 transition-colors"
       >
         <div className="flex items-center gap-2">
           {mode === 'auto' ? (
@@ -65,7 +65,7 @@ const DexModeDropdown = () => {
               className="w-4 h-4 rounded-full"
             />
           )}
-          <span className="text-white text-xs font-geist font-medium">
+          <span className="text-white text-xs font-sans font-medium">
             {currentOption.label}
           </span>
         </div>
@@ -76,7 +76,7 @@ const DexModeDropdown = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-48 bg-[#1e2544] border border-border rounded-xl shadow-lg overflow-hidden z-50">
+        <div className="absolute right-0 top-full mt-2 w-48 bg-[#121212] border border-border rounded-xl shadow-lg overflow-hidden z-50">
           {DEX_OPTIONS.map((option) => (
             <button
               key={option.value}
@@ -104,13 +104,13 @@ const DexModeDropdown = () => {
                   // Aster doesn't need a tour - users can trade directly
                 }
               }}
-              className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-[#3b5fd4]/15 transition-colors text-left ${mode === option.value ? 'bg-[#1e40c6]/20' : ''
+              className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-[rgba(255,255,255,0.8)]/15 transition-colors text-left ${mode === option.value ? 'bg-[rgba(255,255,255,0.9)]/20' : ''
                 }`}
             >
               {option.value === 'auto' ? (
                 <div
                   className={`w-2 h-2 rounded-full bg-brand-green shrink-0 ${mode === option.value
-                    ? 'ring-2 ring-offset-2 ring-offset-[#1e2544] ring-white/30'
+                    ? 'ring-2 ring-offset-2 ring-offset-[#121212] ring-white/30'
                     : ''
                     }`}
                 />
@@ -123,9 +123,9 @@ const DexModeDropdown = () => {
               )}
               <div className="flex flex-col gap-0.5">
                 <span
-                  className={`text-sm font-geist ${mode === option.value
+                  className={`text-sm font-sans ${mode === option.value
                     ? 'text-white font-medium'
-                    : 'text-[#BBBBBB]'
+                    : 'text-[#8E8E8E]'
                     }`}
                 >
                   {option.label}

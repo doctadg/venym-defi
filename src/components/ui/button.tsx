@@ -19,12 +19,12 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
 
     const variants = {
-      default: 'bg-[#1e40c6] text-white hover:bg-[#2d50d9]',
+      default: 'bg-[rgba(255,255,255,0.9)] text-white hover:bg-[#2d50d9]',
       destructive: 'bg-[#FF6468] text-white hover:bg-[#ff5055]',
-      outline: 'border border-border bg-transparent hover:bg-[#1e2544]',
-      secondary: 'bg-[#1e2544] text-white hover:bg-[#252a4a]',
-      ghost: 'hover:bg-[#1e2544]',
-      link: 'text-[#1e40c6] underline-offset-4 hover:underline',
+      outline: 'border border-border bg-transparent hover:bg-[#121212]',
+      secondary: 'bg-[#121212] text-white hover:bg-[#1a1a1a]',
+      ghost: 'hover:bg-[#121212]',
+      link: 'text-[rgba(255,255,255,0.9)] underline-offset-4 hover:underline',
     }
 
     const sizes = {

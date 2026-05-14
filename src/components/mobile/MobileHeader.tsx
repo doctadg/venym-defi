@@ -24,7 +24,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
     const isLoggedIn = useIsLoggedIn();
 
     return (
-        <header className="sticky top-0 z-50 w-full bg-[#0A0E17] border-b border-white/10 px-4 py-3 md:hidden safe-area-top">
+        <header className="sticky top-0 z-50 w-full bg-[#050505] border-b border-white/10 px-4 py-3 md:hidden safe-area-top">
             <div className="flex items-center justify-between">
                 {/* Left: Menu + Logo */}
                 <div className="flex items-center gap-3">
@@ -34,11 +34,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
                     >
                         <MenuIcon />
                     </button>
-                    <img
-                        src="/tideblue.svg"
-                        alt="Tide"
-                        className="h-6 w-auto"
-                    />
+                    <span className="text-lg font-bold text-[#e4e4e7]">Venym</span>
                 </div>
 
                 {/* Right: Actions */}

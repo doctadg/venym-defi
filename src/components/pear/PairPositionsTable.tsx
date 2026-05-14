@@ -67,8 +67,8 @@ const PairPositionsTable: React.FC<PairPositionsTableProps> = React.memo(({
                         <button
                             key={tab.key}
                             onClick={() => setActiveTab(tab.key)}
-                            className={`px-3 py-1.5 text-xs font-geist rounded transition-colors ${activeTab === tab.key
-                                ? 'bg-[#1e40c6]/20 text-[#1e40c6] font-medium'
+                            className={`px-3 py-1.5 text-xs font-sans rounded transition-colors ${activeTab === tab.key
+                                ? 'bg-[rgba(255,255,255,0.9)]/20 text-[rgba(255,255,255,0.9)] font-medium'
                                 : 'text-brand-textGray hover:text-brand-textLight'
                                 }`}
                         >
@@ -84,7 +84,7 @@ const PairPositionsTable: React.FC<PairPositionsTableProps> = React.memo(({
                 {activeTab === 'positions' && positions.length > 0 && (
                     <button
                         onClick={() => setShowCloseAllConfirm(true)}
-                        className="text-brand-red text-[11px] font-geist hover:text-brand-red/80 transition-colors"
+                        className="text-brand-red text-[11px] font-sans hover:text-brand-red/80 transition-colors"
                     >
                         Close All
                     </button>
@@ -95,7 +95,7 @@ const PairPositionsTable: React.FC<PairPositionsTableProps> = React.memo(({
             <div className="flex-1 overflow-y-auto">
                 {showSpinner ? (
                     <div className="flex items-center justify-center py-8">
-                        <div className="w-5 h-5 border-2 border-[#1e40c6]/30 border-t-[#1e40c6] rounded-full animate-spin" />
+                        <div className="w-5 h-5 border-2 border-[rgba(255,255,255,0.9)]/30 border-t-[rgba(255,255,255,0.9)] rounded-full animate-spin" />
                     </div>
                 ) : activeTab === 'positions' ? (
                     <PositionsContent positions={positions} onClose={onClosePosition} />
@@ -110,20 +110,20 @@ const PairPositionsTable: React.FC<PairPositionsTableProps> = React.memo(({
             {showCloseAllConfirm && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
                     <div className="bg-bg-panel border border-border rounded-xl p-5 max-w-sm w-full mx-4 shadow-2xl">
-                        <h3 className="text-white font-geist font-semibold text-sm mb-2">Close All Positions?</h3>
-                        <p className="text-brand-textGray text-xs font-geist mb-4">
+                        <h3 className="text-white font-sans font-semibold text-sm mb-2">Close All Positions?</h3>
+                        <p className="text-brand-textGray text-xs font-sans mb-4">
                             This will close all {positions.length} open pair position{positions.length !== 1 ? 's' : ''}. This action cannot be undone.
                         </p>
                         <div className="flex gap-2">
                             <button
                                 onClick={() => setShowCloseAllConfirm(false)}
-                                className="flex-1 py-2 bg-bg-input border border-border text-brand-textGray text-xs font-geist rounded-lg hover:text-white transition-colors"
+                                className="flex-1 py-2 bg-bg-input border border-border text-brand-textGray text-xs font-sans rounded-lg hover:text-white transition-colors"
                             >
                                 Cancel
                             </button>
                             <button
                                 onClick={() => { setShowCloseAllConfirm(false); onCloseAll(); }}
-                                className="flex-1 py-2 bg-brand-red text-white text-xs font-geist rounded-lg hover:bg-brand-red/80 transition-colors"
+                                className="flex-1 py-2 bg-brand-red text-white text-xs font-sans rounded-lg hover:bg-brand-red/80 transition-colors"
                             >
                                 Close All
                             </button>
@@ -143,7 +143,7 @@ const PositionsContent: React.FC<{
 }> = ({ positions, onClose }) => {
     if (positions.length === 0) {
         return (
-            <div className="text-center py-8 text-brand-textGray text-xs font-geist">
+            <div className="text-center py-8 text-brand-textGray text-xs font-sans">
                 No open pair positions
             </div>
         );
@@ -152,7 +152,7 @@ const PositionsContent: React.FC<{
     return (
         <table className="w-full">
             <thead>
-                <tr className="text-brand-textGray text-[10px] font-geist uppercase tracking-wider">
+                <tr className="text-brand-textGray text-[10px] font-sans uppercase tracking-wider">
                     <th className="text-left pb-2">Pair</th>
                     <th className="text-right pb-2">Size</th>
                     <th className="text-right pb-2">Entry</th>
@@ -178,7 +178,7 @@ const PositionsContent: React.FC<{
                                         <AssetLogos assets={shortAssets} />
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-white text-xs font-geist font-medium">
+                                        <span className="text-white text-xs font-sans font-medium">
                                             {longAssets.join('+')}/{shortAssets.join('+')}
                                         </span>
                                         <span className="text-brand-textGray text-[10px]">
@@ -188,39 +188,39 @@ const PositionsContent: React.FC<{
                                 </div>
                             </td>
                             <td className="text-right py-2">
-                                <span className="text-white text-xs font-geist">
+                                <span className="text-white text-xs font-sans">
                                     ${Number(pos.usdValue || 0).toFixed(2)}
                                 </span>
                             </td>
                             <td className="text-right py-2">
-                                <span className="text-brand-textLight text-xs font-geist">
+                                <span className="text-brand-textLight text-xs font-sans">
                                     {Number(pos.entryRatio || 0).toFixed(4)}
                                 </span>
                             </td>
                             <td className="text-right py-2">
-                                <span className="text-brand-textLight text-xs font-geist">
+                                <span className="text-brand-textLight text-xs font-sans">
                                     {Number(pos.markRatio || 0).toFixed(4)}
                                 </span>
                             </td>
                             <td className="text-right py-2">
                                 <div className="flex flex-col items-end">
-                                    <span className={`text-xs font-geist font-medium ${pnlPositive ? 'text-brand-green' : 'text-brand-red'}`}>
+                                    <span className={`text-xs font-sans font-medium ${pnlPositive ? 'text-brand-green' : 'text-brand-red'}`}>
                                         {pnlPositive ? '+' : ''}${Number(pos.unrealizedPnl || 0).toFixed(2)}
                                     </span>
-                                    <span className={`text-[10px] font-geist ${pnlPositive ? 'text-brand-green' : 'text-brand-red'}`}>
+                                    <span className={`text-[10px] font-sans ${pnlPositive ? 'text-brand-green' : 'text-brand-red'}`}>
                                         {pnlPositive ? '+' : ''}{Number(pos.unrealizedPnlPercent || 0).toFixed(2)}%
                                     </span>
                                 </div>
                             </td>
                             <td className="text-right py-2">
-                                <span className="text-brand-textGray text-xs font-geist">
+                                <span className="text-brand-textGray text-xs font-sans">
                                     {pos.leverage}x
                                 </span>
                             </td>
                             <td className="text-right py-2">
                                 <button
                                     onClick={() => onClose(pos.positionId)}
-                                    className="text-brand-red text-[11px] font-geist opacity-0 group-hover:opacity-100 transition-opacity hover:text-brand-red/80"
+                                    className="text-brand-red text-[11px] font-sans opacity-0 group-hover:opacity-100 transition-opacity hover:text-brand-red/80"
                                 >
                                     Close
                                 </button>
@@ -242,7 +242,7 @@ const OrdersContent: React.FC<{
 }> = ({ orders, onCancel, isTwap }) => {
     if (orders.length === 0) {
         return (
-            <div className="text-center py-8 text-brand-textGray text-xs font-geist">
+            <div className="text-center py-8 text-brand-textGray text-xs font-sans">
                 No {isTwap ? 'TWAP ' : ''}open orders
             </div>
         );
@@ -251,7 +251,7 @@ const OrdersContent: React.FC<{
     return (
         <table className="w-full">
             <thead>
-                <tr className="text-brand-textGray text-[10px] font-geist uppercase tracking-wider">
+                <tr className="text-brand-textGray text-[10px] font-sans uppercase tracking-wider">
                     <th className="text-left pb-2">Pair</th>
                     <th className="text-right pb-2">Type</th>
                     <th className="text-right pb-2">Size</th>
@@ -274,35 +274,35 @@ const OrdersContent: React.FC<{
                                         <span className="text-brand-textGray text-[10px] mx-0.5">/</span>
                                         <AssetLogos assets={shortAssets} />
                                     </div>
-                                    <span className="text-white text-xs font-geist font-medium">
+                                    <span className="text-white text-xs font-sans font-medium">
                                         {longAssets.join('+')}/{shortAssets.join('+')}
                                     </span>
                                 </div>
                             </td>
                             <td className="text-right py-2">
-                                <span className="text-brand-textLight text-xs font-geist">
+                                <span className="text-brand-textLight text-xs font-sans">
                                     {order.orderType}
                                 </span>
                             </td>
                             <td className="text-right py-2">
-                                <span className="text-white text-xs font-geist">
+                                <span className="text-white text-xs font-sans">
                                     ${Number(order.usdValue || 0).toFixed(2)}
                                 </span>
                             </td>
                             <td className="text-right py-2">
-                                <span className="text-brand-textGray text-xs font-geist">
+                                <span className="text-brand-textGray text-xs font-sans">
                                     {order.leverage}x
                                 </span>
                             </td>
                             <td className="text-right py-2">
-                                <span className="text-brand-textGray text-[11px] font-geist">
+                                <span className="text-brand-textGray text-[11px] font-sans">
                                     {order.status}
                                 </span>
                             </td>
                             <td className="text-right py-2">
                                 <button
                                     onClick={() => onCancel(order.orderId)}
-                                    className="text-brand-red text-[11px] font-geist opacity-0 group-hover:opacity-100 transition-opacity hover:text-brand-red/80"
+                                    className="text-brand-red text-[11px] font-sans opacity-0 group-hover:opacity-100 transition-opacity hover:text-brand-red/80"
                                 >
                                     Cancel
                                 </button>

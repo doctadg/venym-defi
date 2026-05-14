@@ -10,28 +10,25 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#0A0E17',
-          panel: '#14192F',
-          input: '#0A0E17',
-          card: '#14192F',
+          DEFAULT: '#050505',
+          panel: '#121212',
+          input: '#0a0a0a',
+          card: '#121212',
         },
         border: {
-          DEFAULT: 'rgba(30, 64, 198, 0.3)',
-          light: 'rgba(30, 64, 198, 0.1)',
+          DEFAULT: 'rgba(255,255,255,0.1)',
+          light: 'rgba(255,255,255,0.05)',
         },
         brand: {
-          gold: '#1e40c6',
-          goldDim: 'rgba(30, 64, 198, 0.1)',
           green: '#56C0A6',
           red: '#FF6468',
           textGray: '#8E8E8E',
-          textLight: '#BBBBBB',
+          textLight: '#e4e4e7',
         },
       },
       fontFamily: {
-        geist: ['var(--font-geist)', 'sans-serif'],
-        satoshi: ['var(--font-satoshi)', 'sans-serif'],
-        replica: ['var(--font-replica)', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
     },
   },

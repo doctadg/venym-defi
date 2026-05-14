@@ -95,7 +95,7 @@ export default function PairRatioChart({ marketId }: PairRatioChartProps) {
         return (
             <div className="w-full h-full flex items-center justify-center bg-[#0a0e1a]">
                 <div className="flex flex-col items-center gap-3">
-                    <div className="w-6 h-6 border-2 border-[#1e40c6] border-t-transparent rounded-full animate-spin" />
+                    <div className="w-6 h-6 border-2 border-[rgba(255,255,255,0.9)] border-t-transparent rounded-full animate-spin" />
                     <span className="text-xs text-[#8E8E8E]">Loading ratio history...</span>
                 </div>
             </div>
@@ -122,7 +122,7 @@ export default function PairRatioChart({ marketId }: PairRatioChartProps) {
                         key={key}
                         onClick={() => setInterval_(key)}
                         className={`px-2 py-0.5 text-[10px] rounded transition-colors ${interval === key
-                            ? 'bg-[#1e40c6] text-white'
+                            ? 'bg-[rgba(255,255,255,0.9)] text-white'
                             : 'text-[#8E8E8E] hover:text-white hover:bg-[#1a1f35]'
                             }`}
                     >
@@ -161,7 +161,7 @@ export default function PairRatioChart({ marketId }: PairRatioChartProps) {
                         <Tooltip
                             contentStyle={{
                                 backgroundColor: '#111827',
-                                border: '1px solid #1e40c6',
+                                border: '1px solid rgba(255,255,255,0.9)',
                                 borderRadius: '6px',
                                 fontSize: '11px',
                             }}

@@ -195,18 +195,12 @@ const AccessGate = ({ children }: AccessGateProps) => {
         {!isLoggedIn ? (
           <AuthCard key="connect">
             <div className="relative z-10 flex flex-col items-start h-full justify-between">
-              <Image
-                src="/tidebluefull.svg"
-                alt="Tide"
-                width={120}
-                height={32}
-                className="h-6 mx-0 w-auto mb-6"
-              />
+              <span className="text-2xl font-bold text-[#e4e4e7] mb-6">Venym</span>
               <div className="w-full gap-2 flex flex-col items-center justify-center">
-                <p className="text-white text-3xl font-bold font-replica leading-tight text-center">
+                <p className="text-[#e4e4e7] text-3xl font-bold font-sans leading-tight text-center">
                   Trade Perps. One Wallet. Best Execution.
                 </p>
-                <p className="text-white/70 mb-5 text-base font-replica text-center">
+                <p className="text-white/70 mb-5 text-base font-sans text-center">
                   Automatically route perps across top DEXs for better pricing.
                 </p>
               </div>
@@ -228,19 +222,13 @@ const AccessGate = ({ children }: AccessGateProps) => {
         ) : !hasAccessCode ? (
           <AuthCard key="access">
             <div className="relative z-10 flex flex-col items-start h-full justify-between">
-              <Image
-                src="/tidebluefull.svg"
-                alt="Tide"
-                width={120}
-                height={32}
-                className="h-6 mx-0 w-auto mb-6"
-              />
+              <span className="text-2xl font-bold text-[#e4e4e7] mb-6">Venym</span>
               <div className="w-full gap-2 flex flex-col items-center justify-center">
-                <p className="text-white text-3xl font-bold font-replica leading-tight text-center">
+                <p className="text-[#e4e4e7] text-3xl font-bold font-sans leading-tight text-center">
                   Invite Only
                 </p>
-                <p className="text-white/70 mb-5 text-base font-replica text-center">
-                  Tide is currently in closed alpha. Please enter your access
+                <p className="text-white/70 mb-5 text-base font-sans text-center">
+                  Venym is currently in closed alpha. Please enter your access
                   code to proceed.
                 </p>
               </div>
@@ -255,11 +243,11 @@ const AccessGate = ({ children }: AccessGateProps) => {
                     setCodeError('')
                   }}
                   placeholder="ENTER CODE"
-                  className="w-full bg-[#0A0E17]/80 border border-white/10 rounded-xl px-4 py-4 text-white text-center text-xl font-mono tracking-[0.2em] focus:outline-none focus:border-brand-gold/50 transition-all placeholder:text-white/10 shadow-inner"
+                  className="w-full bg-[#050505]/80 border border-white/10 rounded-xl px-4 py-4 text-white text-center text-xl font-mono tracking-[0.2em] focus:outline-none focus:border-white/50/50 transition-all placeholder:text-white/10 shadow-inner"
                   maxLength={20}
                   autoFocus
                 />
-                <div className="absolute inset-0 rounded-xl bg-brand-gold/5 opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
+                <div className="absolute inset-0 rounded-xl bg-white/5 opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none" />
               </div>
 
               {codeError && (
@@ -314,18 +302,12 @@ const AccessGate = ({ children }: AccessGateProps) => {
           /* Step 3: Set Username */
           <AuthCard key="username" className="h-[420px]">
             <div className="relative z-10 flex flex-col items-start h-full justify-between">
-              <Image
-                src="/tidebluefull.svg"
-                alt="Tide"
-                width={120}
-                height={32}
-                className="h-6 mx-0 w-auto mb-6"
-              />
+              <span className="text-2xl font-bold text-[#e4e4e7] mb-6">Venym</span>
               <div className="w-full gap-2 flex flex-col items-center justify-center">
-                <p className="text-white text-3xl font-bold font-replica leading-tight text-center">
+                <p className="text-[#e4e4e7] text-3xl font-bold font-sans leading-tight text-center">
                   Choose Your Username
                 </p>
-                <p className="text-white/70 mb-5 text-base font-replica text-center">
+                <p className="text-white/70 mb-5 text-base font-sans text-center">
                   Set a unique username for your account. This will also be your
                   permanent referral code.
                 </p>
@@ -340,11 +322,11 @@ const AccessGate = ({ children }: AccessGateProps) => {
                     setUsername(e.target.value.replace(/[^a-zA-Z0-9]/g, ''))
                   }
                   placeholder="Username"
-                  className={`w-full bg-[#0A0E17]/80 border rounded-xl px-4 py-4 text-white text-lg focus:outline-none transition-all shadow-inner ${usernameAvailable === true
+                  className={`w-full bg-[#050505]/80 border rounded-xl px-4 py-4 text-white text-lg focus:outline-none transition-all shadow-inner ${usernameAvailable === true
                       ? 'border-brand-green/50'
                       : usernameAvailable === false
                         ? 'border-brand-red/50'
-                        : 'border-white/10 focus:border-brand-gold/50'
+                        : 'border-white/10 focus:border-white/50/50'
                     }`}
                   maxLength={20}
                   autoFocus

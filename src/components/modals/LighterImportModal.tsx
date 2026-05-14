@@ -83,7 +83,7 @@ const LighterImportModal = ({ isOpen, onClose, onSuccess }: LighterImportModalPr
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-            <div className="bg-[#14192F] border border-white/10 rounded-2xl p-6 w-[450px] flex flex-col gap-4 shadow-2xl">
+            <div className="bg-[#121212] border border-white/10 rounded-2xl p-6 w-[450px] flex flex-col gap-4 shadow-2xl">
                 <h2 className="text-white text-lg font-medium">Import Lighter Credentials</h2>
                 <p className="text-[#8E8E8E] text-xs">
                     Import your Lighter API keys. You can find your account index in the Lighter app.
@@ -148,7 +148,7 @@ const LighterImportModal = ({ isOpen, onClose, onSuccess }: LighterImportModalPr
                     <button
                         onClick={handleSubmit}
                         disabled={loading}
-                        className="flex-1 py-2.5 rounded-xl bg-brand-gold text-white font-bold hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 shadow-lg"
+                        className="flex-1 py-2.5 rounded-xl bg-white/90 text-white font-bold hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 shadow-lg"
                     >
                         {loading ? 'Importing...' : 'Import Keys'}
                     </button>

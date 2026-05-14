@@ -268,7 +268,7 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
       }}
     >
       <div
-        className="w-[52vw] max-w-[1100px] h-[50vh] max-h-[900px] bg-[#14192F] flex flex-col shadow-2xl rounded-2xl border border-white/10 overflow-hidden"
+        className="w-[52vw] max-w-[1100px] h-[50vh] max-h-[900px] bg-[#121212] flex flex-col shadow-2xl rounded-2xl border border-white/10 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -278,7 +278,7 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
           </h2>
           <button
             onClick={onClose}
-            className="flex items-center gap-2 px-2 py-1 hover:bg-[#14192F] rounded-lg transition-colors text-[#8E8E8E]"
+            className="flex items-center gap-2 px-2 py-1 hover:bg-[#121212] rounded-lg transition-colors text-[#8E8E8E]"
             title="Press Esc to close"
           >
             <CloseIcon className="w-5 h-5 text-white" />
@@ -298,7 +298,7 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
               placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-8 pr-3 py-1.5 bg-white/5 border border-white/10 rounded text-white text-sm placeholder-[#8E8E8E] focus:outline-none focus:border-brand-gold/50"
+              className="w-full pl-8 pr-3 py-1.5 bg-white/5 border border-white/10 rounded text-white text-sm placeholder-[#8E8E8E] focus:outline-none focus:border-white/50/50"
               autoFocus
             />
           </div>
@@ -312,8 +312,8 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
                 className={`
                   px-3 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap
                   ${selectedPlatform === platform
-                    ? 'bg-brand-gold text-white'
-                    : 'bg-[#14192F] text-white hover:bg-[#14192F]'
+                    ? 'bg-white/90 text-white'
+                    : 'bg-[#121212] text-white hover:bg-[#121212]'
                   }
                 `}
               >
@@ -331,7 +331,7 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
             </div>
           ) : (
             <table ref={tableRef} className="w-full">
-              <thead className="sticky top-0 z-10 bg-[#14192F] border-b border-white/10">
+              <thead className="sticky top-0 z-10 bg-[#121212] border-b border-white/10">
                 <tr>
                   <th className="px-3 py-2 text-left text-xs font-medium text-[#8E8E8E]">
                     <div className="flex items-center gap-2">
@@ -416,8 +416,8 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
                         className={`
                             border-b border-white/10 cursor-pointer transition-colors
                           ${isSelected
-                            ? 'bg-[#1e40c6]/10'
-                            : 'hover:bg-[#1e2544]'
+                            ? 'bg-[rgba(255,255,255,0.9)]/10'
+                            : 'hover:bg-[#121212]'
                           }
                             ${isCurrent ? 'bg-white/10' : ''}
                         `}
@@ -429,11 +429,11 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
                                 onClick={(e) =>
                                   toggleFavorite(ticker.symbol, e)
                                 }
-                                className="p-0.5 hover:bg-[#dee3f1] rounded transition-colors"
+                                className="p-0.5 hover:bg-[rgba(255,255,255,0.1)] rounded transition-colors"
                               >
                                 <StarIcon
                                   className={`w-2.5 h-2.5 ${isFavorite
-                                    ? 'text-[#1e40c6] fill-[#1e40c6]'
+                                    ? 'text-[rgba(255,255,255,0.9)] fill-[rgba(255,255,255,0.9)]'
                                     : 'text-[#8E8E8E]'
                                     }`}
                                 />
@@ -451,7 +451,7 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
                                     }}
                                   />
                                 ) : (
-                                  <div className="w-5 h-5 rounded-full bg-[#dee3f1] flex items-center justify-center text-[10px] text-[#8E8E8E]">
+                                  <div className="w-5 h-5 rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center text-[10px] text-[#8E8E8E]">
                                     {ticker.symbol.charAt(0) || ''}
                                   </div>
                                 )}
@@ -460,7 +460,7 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
                                   -USDC
                                 </span>
                                 {ticker.leverage ? (
-                                  <span className="px-1.5 py-0.5 bg-[#1e40c6]/20 text-[#1e40c6] text-[10px] rounded">
+                                  <span className="px-1.5 py-0.5 bg-[rgba(255,255,255,0.9)]/20 text-[rgba(255,255,255,0.9)] text-[10px] rounded">
                                     {ticker.leverage}x
                                   </span>
                                 ) : null}
@@ -528,19 +528,19 @@ const TickerSelectionModal: React.FC<TickerSelectionModalProps> = ({
             <span>Open</span>
           </div>
           <div className="flex items-center gap-1">
-            <kbd className="px-1 py-0.5 bg-[#1e2544] rounded">↑↓</kbd>
+            <kbd className="px-1 py-0.5 bg-[#121212] rounded">↑↓</kbd>
             <span>Navigate</span>
           </div>
           <div className="flex items-center gap-1">
-            <kbd className="px-1 py-0.5 bg-[#1e2544] rounded">Enter</kbd>
+            <kbd className="px-1 py-0.5 bg-[#121212] rounded">Enter</kbd>
             <span>Select</span>
           </div>
           <div className="flex items-center gap-1">
-            <kbd className="px-1 py-0.5 bg-[#1e2544] rounded">⌘S</kbd>
+            <kbd className="px-1 py-0.5 bg-[#121212] rounded">⌘S</kbd>
             <span>Favorite</span>
           </div>
           <div className="flex items-center gap-1">
-            <kbd className="px-1 py-0.5 bg-[#1e2544] rounded">Esc</kbd>
+            <kbd className="px-1 py-0.5 bg-[#121212] rounded">Esc</kbd>
             <span>Close</span>
           </div>
         </div>

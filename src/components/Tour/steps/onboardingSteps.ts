@@ -12,8 +12,8 @@ export interface StepData {
 export const onboardingSteps: Step[] = [
   {
     target: '#trading-chart',
-    title: 'Welcome to Tide!',
-    content: "Let's show you around Tide. This quick tour will help you get started with token pairs, exchange selection, and more.",
+    title: 'Welcome to Venym!',
+    content: "Let's show you around Venym. This quick tour will help you get started with token pairs, exchange selection, and more.",
     placement: 'center',
     disableBeacon: true,
   },
@@ -56,7 +56,7 @@ export const hyperliquidSteps: Step[] = [
   {
     target: 'body',
     title: 'Step 2: Enable Trading',
-    content: 'After depositing, click the "Enable Hyperliquid Trading" button to generate API keys. This allows Tide to execute trades on your behalf.',
+    content: 'After depositing, click the "Enable Hyperliquid Trading" button to generate API keys. This allows Venym to execute trades on your behalf.',
     placement: 'center',
     disableBeacon: true,
   },
@@ -84,7 +84,7 @@ export const lighterSteps: Step[] = [
   {
     target: 'body',
     title: 'Step 1: Sign into Lighter',
-    content: 'First, go to lighter.xyz and sign in with the same wallet you connected to Tide.',
+    content: 'First, go to lighter.xyz and sign in with the same wallet you connected to Venym.',
     placement: 'center',
     disableBeacon: true,
   },
@@ -123,7 +123,7 @@ export const lighterSteps: Step[] = [
   {
     target: 'body',
     title: 'Step 6: Save Your Keys',
-    content: 'Copy and securely save the API Public Key and API Private Key. You will need to paste these into Tide.',
+    content: 'Copy and securely save the API Public Key and API Private Key. You will need to paste these into Venym.',
     placement: 'center',
     disableBeacon: true,
     data: {
@@ -145,7 +145,7 @@ export const lighterSteps: Step[] = [
   {
     target: 'body',
     title: 'Step 8: Copy Account Index',
-    content: 'Find and copy your Account Index number. You will need this along with your API keys to import into Tide.',
+    content: 'Find and copy your Account Index number. You will need this along with your API keys to import into Venym.',
     placement: 'center',
     disableBeacon: true,
     data: {
@@ -184,7 +184,7 @@ export const pacificaSteps: Step[] = [
   {
     target: '#order-panel',
     title: 'Ready to Trade!',
-    content: 'Once funded, you can place trades using the order panel. Tide will execute your orders on Pacifica automatically.',
+    content: 'Once funded, you can place trades using the order panel. Venym will execute your orders on Pacifica automatically.',
     placement: 'left',
     disableBeacon: true,
   },

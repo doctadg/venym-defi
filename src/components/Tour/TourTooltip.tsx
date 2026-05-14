@@ -30,14 +30,14 @@ const TourTooltip: React.FC<TooltipRenderProps> = ({
   return (
     <div
       {...tooltipProps}
-      className="bg-[#14192F] border border-[rgba(30,64,198,0.5)] rounded-2xl shadow-2xl max-w-md p-0 overflow-hidden"
+      className="bg-[#121212] border border-[rgba(30,64,198,0.5)] rounded-2xl shadow-2xl max-w-md p-0 overflow-hidden"
       style={{
         boxShadow: '0 0 40px rgba(30, 64, 198, 0.3)',
       }}
     >
       {/* Image (if provided) */}
       {hasImage && (
-        <div className="relative w-full h-40 bg-[#0A0E17]">
+        <div className="relative w-full h-40 bg-[#050505]">
           <Image
             src={stepData.image!}
             alt={stepData.imageAlt || step.title?.toString() || 'Tour step'}
@@ -64,7 +64,7 @@ const TourTooltip: React.FC<TooltipRenderProps> = ({
 
       {/* Content */}
       <div className="px-5 pb-4">
-        <p className="text-[#BBBBBB] text-sm leading-relaxed">{step.content}</p>
+        <p className="text-[#8E8E8E] text-sm leading-relaxed">{step.content}</p>
       </div>
 
       {/* Progress dots */}
@@ -74,9 +74,9 @@ const TourTooltip: React.FC<TooltipRenderProps> = ({
             key={i}
             className={`w-2 h-2 rounded-full transition-all ${
               i === index
-                ? 'bg-[#1e40c6] w-6'
+                ? 'bg-[rgba(255,255,255,0.9)] w-6'
                 : i < index
-                ? 'bg-[#1e40c6]/50'
+                ? 'bg-[rgba(255,255,255,0.9)]/50'
                 : 'bg-white/20'
             }`}
           />
@@ -96,14 +96,14 @@ const TourTooltip: React.FC<TooltipRenderProps> = ({
           {index > 0 && (
             <button
               {...backProps}
-              className="px-4 py-2 text-sm text-[#BBBBBB] hover:text-white border border-white/20 rounded-lg hover:border-white/40 transition-all"
+              className="px-4 py-2 text-sm text-[#8E8E8E] hover:text-white border border-white/20 rounded-lg hover:border-white/40 transition-all"
             >
               Back
             </button>
           )}
           <button
             {...primaryProps}
-            className="px-5 py-2 text-sm text-white bg-[#1e40c6] rounded-lg hover:bg-[#2850d6] transition-all shadow-[0_0_15px_rgba(30,64,198,0.4)]"
+            className="px-5 py-2 text-sm text-white bg-[rgba(255,255,255,0.9)] rounded-lg hover:bg-[rgba(255,255,255,1)] transition-all shadow-[0_0_15px_rgba(30,64,198,0.4)]"
           >
             {isLastStep ? 'Finish' : 'Next'}
           </button>

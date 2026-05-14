@@ -26,8 +26,8 @@ const RoutingRecommendation: React.FC<RoutingRecommendationProps> = ({
 
     if (loading && !routingData) {
         return (
-            <div className="w-full bg-[#14192F]/50 backdrop-blur-sm border border-white/10 rounded-xl p-3 flex items-center justify-center h-20 animate-pulse">
-                <span className="text-[#8E8E8E] text-xs font-geist">
+            <div className="w-full bg-[#121212]/50 backdrop-blur-sm border border-white/10 rounded-xl p-3 flex items-center justify-center h-20 animate-pulse">
+                <span className="text-[#8E8E8E] text-xs font-sans">
                     {isAutoMode ? 'Finding best route...' : `Fetching ${dexMode} price...`}
                 </span>
             </div>
@@ -43,39 +43,39 @@ const RoutingRecommendation: React.FC<RoutingRecommendationProps> = ({
 
     return (
         <div className={`w-full backdrop-blur-md border rounded-xl p-3 flex flex-col gap-2 shadow-lg transition-all duration-300 ease-in-out ${isAutoMode
-            ? 'bg-[#14192F]/80 border-brand-gold/20'
-            : 'bg-[#14192F]/60 border-white/10'
+            ? 'bg-[#121212]/80 border-white/50/20'
+            : 'bg-[#121212]/60 border-white/10'
             }`}>
             <div className="flex justify-between items-center">
                 <div className="flex items-center gap-2">
-                    <div className={`w-2 h-2 rounded-full ${isAutoMode ? 'bg-brand-gold animate-pulse' : 'bg-brand-green'}`} />
-                    <span className={`text-xs font-medium font-geist ${isAutoMode ? 'text-brand-gold' : 'text-white'}`}>
+                    <div className={`w-2 h-2 rounded-full ${isAutoMode ? 'bg-white/90 animate-pulse' : 'bg-brand-green'}`} />
+                    <span className={`text-xs font-medium font-sans ${isAutoMode ? 'text-white' : 'text-white'}`}>
                         {isAutoMode ? 'Smart Routing Active' : `Trading on ${dexMode.charAt(0).toUpperCase() + dexMode.slice(1)}`}
                     </span>
                 </div>
                 {isAutoMode && (
                     <div className="flex items-center gap-1">
-                        <span className="text-[#8E8E8E] text-[10px] font-geist">Refreshes every 1s</span>
+                        <span className="text-[#8E8E8E] text-[10px] font-sans">Refreshes every 1s</span>
                     </div>
                 )}
             </div>
 
             <div className="flex justify-between items-end mt-1">
                 <div className="flex flex-col">
-                    <span className="text-[#8E8E8E] text-[10px] font-geist mb-0.5">
+                    <span className="text-[#8E8E8E] text-[10px] font-sans mb-0.5">
                         {isAutoMode ? 'Best Route' : 'Platform'}
                     </span>
-                    <span className="text-white text-sm font-medium font-geist capitalize">{recommended}</span>
+                    <span className="text-white text-sm font-medium font-sans capitalize">{recommended}</span>
                 </div>
                 <div className="flex flex-col items-end">
-                    <span className="text-[#8E8E8E] text-[10px] font-geist mb-0.5">Execution Price</span>
-                    <span className="text-white text-sm font-medium font-geist">${formatPrice(price)}</span>
+                    <span className="text-[#8E8E8E] text-[10px] font-sans mb-0.5">Execution Price</span>
+                    <span className="text-white text-sm font-medium font-sans">${formatPrice(price)}</span>
                 </div>
             </div>
 
             {isAutoMode && savings > 0 && (
                 <div className="flex items-center gap-1.5 bg-brand-green/10 rounded-lg px-2 py-1 mt-1 self-start">
-                    <span className="text-brand-green text-[10px] font-medium font-geist">
+                    <span className="text-brand-green text-[10px] font-medium font-sans">
                         Save ${savings.toFixed(2)} ({savingsPercent.toFixed(2)}%)
                     </span>
                 </div>

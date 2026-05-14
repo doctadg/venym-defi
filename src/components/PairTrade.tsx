@@ -109,7 +109,7 @@ const PairTrade: React.FC = () => {
                                         <path d="m21 21-4.35-4.35" />
                                     </svg>
                                 </div>
-                                <p className="text-brand-textGray text-xs font-geist">
+                                <p className="text-brand-textGray text-xs font-sans">
                                     Select a pair to view ratio chart
                                 </p>
                             </div>

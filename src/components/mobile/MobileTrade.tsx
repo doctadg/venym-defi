@@ -46,7 +46,7 @@ const MobileTrade: React.FC<MobileTradeProps> = ({
     ];
 
     return (
-        <div className="flex flex-col h-full overflow-hidden bg-[#0A0E17]">
+        <div className="flex flex-col h-full overflow-hidden bg-[#050505]">
             {/* Asset Bar */}
             <MobileAssetBar
                 symbol={activeSymbol}
@@ -54,7 +54,7 @@ const MobileTrade: React.FC<MobileTradeProps> = ({
             />
 
             {/* Tab Navigation */}
-            <div className="flex items-center gap-1 px-4 py-2 bg-[#0A0E17] border-b border-white/10 overflow-x-auto no-scrollbar">
+            <div className="flex items-center gap-1 px-4 py-2 bg-[#050505] border-b border-white/10 overflow-x-auto no-scrollbar">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
@@ -71,7 +71,7 @@ const MobileTrade: React.FC<MobileTradeProps> = ({
 
             {/* Timeframe Selector (for chart tab) */}
             {activeTab === 'chart' && (
-                <div className="flex items-center gap-2 px-4 py-2 bg-[#0A0E17] overflow-x-auto no-scrollbar">
+                <div className="flex items-center gap-2 px-4 py-2 bg-[#050505] overflow-x-auto no-scrollbar">
                     {['1m', '5m', '15m', '1h', '4h', 'D'].map((tf) => (
                         <button
                             key={tf}
@@ -121,7 +121,7 @@ const MobileTrade: React.FC<MobileTradeProps> = ({
             {/* Order Panel Toggle */}
             <button
                 onClick={() => setShowOrderPanel(!showOrderPanel)}
-                className="w-full py-2 bg-[#14192F] border-t border-white/10 text-center"
+                className="w-full py-2 bg-[#121212] border-t border-white/10 text-center"
             >
                 <div className="flex items-center justify-center gap-2">
                     <span className="text-white text-sm font-medium">

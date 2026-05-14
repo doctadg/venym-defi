@@ -53,7 +53,7 @@ export const AuthPageLayout = ({ children }: AuthPageLayoutProps) => {
 
   return (
     <div
-      className="relative min-h-screen bg-[#0A0E17] flex items-center justify-center p-4 overflow-hidden font-replica"
+      className="relative min-h-screen bg-[#050505] flex items-center justify-center p-4 overflow-hidden font-sans"
       style={{
         backgroundImage: "url('/bg.jpg')",
         backgroundSize: 'cover',
@@ -61,7 +61,7 @@ export const AuthPageLayout = ({ children }: AuthPageLayoutProps) => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="absolute inset-0 bg-[#0A0E17]/80" />
+      <div className="absolute inset-0 bg-[#050505]/80" />
       <BackgroundGlows />
       {children}
     </div>

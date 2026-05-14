@@ -7,7 +7,7 @@ const ConnectButton = () => {
     return (
         <button
             onClick={() => setShowAuthFlow(true)}
-            className="hidden md:flex items-center justify-center px-6 py-2 bg-[#0052FF] rounded-lg text-white font-geist text-sm hover:bg-[#0040cc] transition-colors shadow-[0_0_15px_rgba(0,82,255,0.3)]"
+            className="hidden md:flex items-center justify-center px-6 py-2 bg-white/90 rounded-lg text-black font-sans text-sm font-medium hover:bg-white transition-colors"
         >
             Connect Wallet
         </button>

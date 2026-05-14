@@ -116,16 +116,16 @@ export default function WaitlistPage() {
         <div className="relative z-10 flex flex-col items-start h-full justify-between">
           <Image
             src="/tidebluefull.svg"
-            alt="Tide"
+            alt="Venym"
             width={120}
             height={32}
             className="h-6 mx-0 w-auto mb-6"
           />
           <div className="w-full gap-2 flex flex-col items-center justify-center">
-            <p className="text-white text-3xl font-bold font-replica leading-tight text-center">
+            <p className="text-white text-3xl font-bold font-sans leading-tight text-center">
               {title}
             </p>
-            <p className="text-white/70 mb-5 text-base font-replica text-center">
+            <p className="text-white/70 mb-5 text-base font-sans text-center">
               {description}
             </p>
           </div>

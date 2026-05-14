@@ -169,10 +169,10 @@ const TVChart: React.FC<TVChartProps> = ({
       theme,
       overrides: {
         // Pane backgrounds
-        'paneProperties.background': '#14192F',
+        'paneProperties.background': '#121212',
         'paneProperties.backgroundType': 'solid',
-        'paneProperties.backgroundGradientStartColor': '#14192F',
-        'paneProperties.backgroundGradientEndColor': '#14192F',
+        'paneProperties.backgroundGradientStartColor': '#121212',
+        'paneProperties.backgroundGradientEndColor': '#121212',
 
         // Grid lines
         'paneProperties.vertGridProperties.color': 'rgba(255,255,255,0.05)',
@@ -181,7 +181,7 @@ const TVChart: React.FC<TVChartProps> = ({
         'paneProperties.horzGridProperties.style': 0,
 
         // Scales (price and time axis)
-        'scalesProperties.backgroundColor': '#14192F',
+        'scalesProperties.backgroundColor': '#121212',
         'scalesProperties.textColor': '#8E8E8E',
         'scalesProperties.lineColor': 'rgba(255,255,255,0.1)',
 
@@ -206,8 +206,8 @@ const TVChart: React.FC<TVChartProps> = ({
         'paneProperties.legendProperties.showSeriesOHLC': true,
       },
       loading_screen: {
-        backgroundColor: '#14192F',
-        foregroundColor: '#1e40c6',
+        backgroundColor: '#121212',
+        foregroundColor: 'rgba(255,255,255,0.9)',
       },
       custom_css_url:
         '/tview_charting_advanced/charting_library/custom-theme.css',
@@ -235,13 +235,13 @@ const TVChart: React.FC<TVChartProps> = ({
 
       // Force apply our custom theme colors after TradingView's default theme loads
       widget.applyOverrides({
-        'paneProperties.background': '#14192F',
+        'paneProperties.background': '#121212',
         'paneProperties.backgroundType': 'solid',
-        'paneProperties.backgroundGradientStartColor': '#14192F',
-        'paneProperties.backgroundGradientEndColor': '#14192F',
-        'paneProperties.vertGridProperties.color': '#252525',
-        'paneProperties.horzGridProperties.color': '#252525',
-        'scalesProperties.backgroundColor': '#14192F',
+        'paneProperties.backgroundGradientStartColor': '#121212',
+        'paneProperties.backgroundGradientEndColor': '#121212',
+        'paneProperties.vertGridProperties.color': '#1a1a1a',
+        'paneProperties.horzGridProperties.color': '#1a1a1a',
+        'scalesProperties.backgroundColor': '#121212',
         'scalesProperties.textColor': '#8E8E8E',
         'scalesProperties.lineColor': 'rgba(255,255,255,0.1)',
         'mainSeriesProperties.candleStyle.upColor': '#56C0A6',
@@ -322,7 +322,7 @@ const TVChart: React.FC<TVChartProps> = ({
     <div
       id="trading-chart"
       ref={chartWrapperRef}
-      className="w-full h-full flex flex-col rounded-lg overflow-hidden border border-white/10 bg-[#14192F] relative"
+      className="w-full h-full flex flex-col rounded-lg overflow-hidden border border-white/10 bg-[#121212] relative"
     >
       <PriceHeader
         symbol={activeSymbol}

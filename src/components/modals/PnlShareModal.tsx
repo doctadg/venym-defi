@@ -99,7 +99,7 @@ export const PnlShareModal: React.FC<PnlShareModalProps> = ({ isOpen, onClose, d
             const image = finalCanvas.toDataURL('image/jpeg', 0.92)
             const link = document.createElement('a')
             link.href = image
-            link.download = `Tide-PnL-${data.symbol}-${Date.now()}.jpg`
+            link.download = `Venym-PnL-${data.symbol}-${Date.now()}.jpg`
             link.click()
         } catch (err) {
             console.error('Download failed', err)
@@ -110,7 +110,7 @@ export const PnlShareModal: React.FC<PnlShareModalProps> = ({ isOpen, onClose, d
     }
 
     return (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[100] p-4 font-geist">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[100] p-4 font-sans">
             <div className="relative max-w-4xl w-full flex flex-col items-center gap-6">
                 <button
                     onClick={onClose}
@@ -133,7 +133,7 @@ export const PnlShareModal: React.FC<PnlShareModalProps> = ({ isOpen, onClose, d
                         <div className="relative z-10 flex flex-col h-full p-[5%] justify-between">
                             {/* Top Row */}
                             <div className="flex justify-between items-center">
-                                <img src="/tidebluefull.svg" alt="Tide" style={{ height: '3em' }} />
+                                <span style={{ fontSize: '1.5em', fontWeight: 700, color: '#e4e4e7' }}>Venym</span>
                                 <span className="text-white text-2xl sm:text-3xl font-medium tracking-wide">
                                     {usernameDisplay}
                                 </span>
@@ -209,7 +209,7 @@ export const PnlShareModal: React.FC<PnlShareModalProps> = ({ isOpen, onClose, d
                 <button
                     onClick={handleDownload}
                     disabled={downloading}
-                    className="bg-brand-gold hover:bg-brand-gold/90 text-white font-bold text-lg py-4 px-12 rounded-full transition-all flex items-center gap-3 disabled:opacity-50"
+                    className="bg-white/90 hover:bg-white text-white font-bold text-lg py-4 px-12 rounded-full transition-all flex items-center gap-3 disabled:opacity-50"
                 >
                     {downloading ? 'Capturing...' : 'Download Image'}
                 </button>

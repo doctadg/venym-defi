@@ -142,7 +142,7 @@ const MobilePortfolio: React.FC = () => {
     ];
 
     return (
-        <div className="flex flex-col h-full bg-[#0A0E17] overflow-hidden">
+        <div className="flex flex-col h-full bg-[#050505] overflow-hidden">
             {/* Header */}
             <div className="px-4 py-4 border-b border-white/10">
                 <h1 className="text-xl font-semibold text-white">Portfolio</h1>
@@ -179,12 +179,12 @@ const MobilePortfolio: React.FC = () => {
                     >
                         {tab.label}
                         {tab.count !== undefined && tab.count > 0 && (
-                            <span className="ml-1.5 px-1.5 py-0.5 bg-brand-gold/20 rounded-full text-[10px] text-brand-gold">
+                            <span className="ml-1.5 px-1.5 py-0.5 bg-white/10 rounded-full text-[10px] text-white">
                                 {tab.count}
                             </span>
                         )}
                         {activeTab === tab.id && (
-                            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-gold rounded-t-full" />
+                            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/90 rounded-t-full" />
                         )}
                     </button>
                 ))}

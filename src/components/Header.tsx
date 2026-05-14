@@ -24,7 +24,7 @@ const NavButton = ({
 }) => (
   <button
     onClick={onClick}
-    className={`px-4 py-2 text-sm font-geist transition-colors ${active ? 'text-white font-medium' : 'text-[#8E8E8E] hover:text-[#BBBBBB]'
+    className={`px-4 py-2 text-sm transition-colors ${active ? 'text-[#e4e4e7] font-medium' : 'text-[#8E8E8E] hover:text-[#e4e4e7]'
       }`}
   >
     {label}
@@ -42,7 +42,7 @@ const LinkNavButton = ({
 }) => (
   <Link
     href={href}
-    className={`px-4 py-2 text-sm font-geist transition-colors ${active ? 'text-white font-medium' : 'text-[#8E8E8E] hover:text-[#BBBBBB]'
+    className={`px-4 py-2 text-sm transition-colors ${active ? 'text-[#e4e4e7] font-medium' : 'text-[#8E8E8E] hover:text-[#e4e4e7]'
       }`}
   >
     {label}
@@ -65,7 +65,9 @@ const Header: React.FC<HeaderProps> = ({
       {/* Left Logo & Nav */}
       <div className="flex items-center gap-8">
         {/* Logo */}
-        <img src="/tidebluefull.svg" alt="Tide" className="h-8 w-auto" />
+        <div className="flex items-center gap-2">
+          <span className="text-[#e4e4e7] font-bold text-xl tracking-tight">Venym</span>
+        </div>
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-2">
@@ -73,6 +75,11 @@ const Header: React.FC<HeaderProps> = ({
             label="Trade"
             active={isTradeActive}
             href="/"
+          />
+          <LinkNavButton
+            label="Swap"
+            active={pathname === '/swap'}
+            href="/swap"
           />
           <LinkNavButton
             label="Pair Trading"
@@ -111,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({
             <button
               id="deposit-button"
               onClick={onDepositClick}
-              className="hidden md:flex items-center justify-center px-6 py-2 bg-[#0052FF] rounded-lg text-white font-geist text-sm hover:bg-[#0040cc] transition-colors shadow-[0_0_15px_rgba(0,82,255,0.3)]"
+              className="hidden md:flex items-center justify-center px-6 py-2 bg-white/90 rounded-lg text-black text-sm font-medium hover:bg-white transition-colors"
             >
               Deposit / Withdraw
             </button>

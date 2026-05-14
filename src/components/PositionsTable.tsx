@@ -20,13 +20,13 @@ const TabButton = ({
   <button
     onClick={onClick}
     className={`
-    relative py-3 px-1 mr-6 text-xs font-geist font-medium transition-colors
-    ${active ? 'text-white' : 'text-[#8E8E8E] hover:text-[#BBBBBB]'}
+    relative py-3 px-1 mr-6 text-xs font-sans font-medium transition-colors
+    ${active ? 'text-white' : 'text-[#8E8E8E] hover:text-[#8E8E8E]'}
   `}
   >
     {label} {count !== undefined && `(${count})`}
     {active && (
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#1e40c6] rounded-t-full" />
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[rgba(255,255,255,0.9)] rounded-t-full" />
     )}
   </button>
 )
@@ -116,7 +116,7 @@ const PositionRow: React.FC<PositionRowProps> = ({
           </span>
         </div>
       </td>
-      <td className="py-3 px-4 text-xs text-[#BBBBBB] capitalize">
+      <td className="py-3 px-4 text-xs text-[#8E8E8E] capitalize">
         {exchange}
       </td>
       <td className="py-3 px-4 text-xs text-brand-green">{data.size}</td>
@@ -136,7 +136,7 @@ const PositionRow: React.FC<PositionRowProps> = ({
           {pnlValue.toFixed(2)} ({pnlPercent.toFixed(2)}%)
         </span>
       </td>
-      <td className="py-3 px-4 text-xs text-[#BBBBBB]">
+      <td className="py-3 px-4 text-xs text-[#8E8E8E]">
         {data.liquidationPrice || '-'}
       </td>
       <td className="py-3 px-4 text-xs text-white">
@@ -169,7 +169,7 @@ const PositionRow: React.FC<PositionRowProps> = ({
               onFlip(data.symbol, direction, data.size, leverage, exchange)
             }
             disabled={closing || flipping}
-            className="hover:text-brand-gold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {flipping ? 'Flipping...' : 'Flip'}
           </button>
@@ -226,11 +226,11 @@ const OrderRow: React.FC<{
       </td>
       <td className="py-3 px-4 text-xs text-white">{data.quantity}</td>
       <td className="py-3 px-4 text-xs text-white">{data.price}</td>
-      <td className="py-3 px-4 text-xs text-[#BBBBBB]">
+      <td className="py-3 px-4 text-xs text-[#8E8E8E]">
         {data.filledQuantity || '0'}
       </td>
-      <td className="py-3 px-4 text-xs text-[#BBBBBB]">{data.status}</td>
-      <td className="py-3 px-4 text-xs text-[#BBBBBB]">
+      <td className="py-3 px-4 text-xs text-[#8E8E8E]">{data.status}</td>
+      <td className="py-3 px-4 text-xs text-[#8E8E8E]">
         {new Date(data.timestamp).toLocaleString()}
       </td>
       <td className="py-3 px-4 last:pr-6">
@@ -276,7 +276,7 @@ const LimitPriceModal: React.FC<LimitModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-[#14192F] border border-white/10 rounded-2xl p-6 w-[320px] shadow-2xl">
+      <div className="bg-[#121212] border border-white/10 rounded-2xl p-6 w-[320px] shadow-2xl">
         <h3 className="text-white text-sm font-medium mb-4">
           Limit Close Order
         </h3>
@@ -307,7 +307,7 @@ const LimitPriceModal: React.FC<LimitModalProps> = ({
               type="text"
               value={limitPrice}
               onChange={(e) => setLimitPrice(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-brand-gold"
+              className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-white/50"
               placeholder="Enter limit price"
             />
           </div>
@@ -323,7 +323,7 @@ const LimitPriceModal: React.FC<LimitModalProps> = ({
           <button
             onClick={() => onConfirm(limitPrice)}
             disabled={loading || !limitPrice}
-            className="flex-1 py-2 bg-brand-gold text-white rounded-lg text-sm font-medium hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
+            className="flex-1 py-2 bg-white/90 text-white rounded-lg text-sm font-medium hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50"
           >
             {loading ? 'Placing...' : 'Place Order'}
           </button>

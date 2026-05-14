@@ -1,14 +1,14 @@
 import React from 'react'
 
 const ReferralRow = ({ epoch, status, period, points }: any) => (
-  <div className="grid grid-cols-4 px-8 py-8 border-b border-[#252525] hover:bg-[#252525] cursor-pointer transition-colors text-sm items-center">
+  <div className="grid grid-cols-4 px-8 py-8 border-b border-[#1a1a1a] hover:bg-[#1a1a1a] cursor-pointer transition-colors text-sm items-center">
     <span className="text-white">{epoch}</span>
     <div>
       <span
         className={`px-3 py-1.5 rounded-lg text-xs font-medium ${
           status === 'Active'
             ? 'bg-[#153430] text-[#56C0A6]'
-            : 'bg-[#292929] text-[#8E8E8E]'
+            : 'bg-[#1a1a1a] text-[#8E8E8E]'
         }`}
       >
         {status}
@@ -60,7 +60,7 @@ const Referral = () => {
 
       {/* Table */}
       <div className="bg-bg-card border border-border rounded-2xl flex flex-col overflow-hidden mt-4">
-        <div className="grid grid-cols-4 px-8 py-5 border-b border-[#252525] bg-[#1e2544]">
+        <div className="grid grid-cols-4 px-8 py-5 border-b border-[#1a1a1a] bg-[#121212]">
           {['REASON', 'POINTS', 'TIMESTAMP'].map((h) => (
             <span
               key={h}
@@ -78,7 +78,7 @@ const Referral = () => {
             data.map((item, i) => (
               <div
                 key={i}
-                className="grid grid-cols-4 px-8 py-8 border-b border-[#252525] hover:bg-[#252525] cursor-pointer transition-colors text-sm items-center"
+                className="grid grid-cols-4 px-8 py-8 border-b border-[#1a1a1a] hover:bg-[#1a1a1a] cursor-pointer transition-colors text-sm items-center"
               >
                 <span className="text-white">{item.reason}</span>
                 <span className="text-brand-green">+{item.points}</span>

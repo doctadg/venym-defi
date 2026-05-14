@@ -2,48 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Replica';
-  src: url('/fonts/fonnts.com-ReplicaPro.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Replica';
-  src: url('/fonts/fonnts.com-Replica-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Replica';
-  src: url('/fonts/fonnts.com-ReplicaPro-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Replica';
-  src: url('/fonts/fonnts.com-Replica_ProTT_Heavy.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  --font-geist: 'Manrope', sans-serif;
-  --font-satoshi: 'Inter', sans-serif;
-  --font-replica: 'Replica', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 body {
-  font-family: var(--font-geist);
-  background-color: #0a0e17;
-  color: white;
+  font-family: var(--font-sans);
+  background-color: #050505;
+  color: #e4e4e7;
+}
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(10, 10, 12, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Custom Scrollbar for dark theme */
@@ -53,16 +27,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e2544;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dee3f1;
-  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4d4d4d;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Custom Range Slider for Leverage */
@@ -78,16 +52,16 @@ input[type='range']::-webkit-slider-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1e40c6 0%, #3b5fd4 50%, #1e40c6 100%);
+  background: rgba(255, 255, 255, 0.9);
   cursor: pointer;
-  border: 2px solid #16192f;
-  box-shadow: 0 2px 6px rgba(30, 64, 198, 0.4);
+  border: 2px solid #050505;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 input[type='range']::-webkit-slider-thumb:hover {
   transform: scale(1.15);
-  box-shadow: 0 3px 10px rgba(30, 64, 198, 0.6);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
 }
 
 input[type='range']::-webkit-slider-thumb:active {
@@ -98,16 +72,16 @@ input[type='range']::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1e40c6 0%, #3b5fd4 50%, #1e40c6 100%);
+  background: rgba(255, 255, 255, 0.9);
   cursor: pointer;
-  border: 2px solid #16192f;
-  box-shadow: 0 2px 6px rgba(30, 64, 198, 0.4);
+  border: 2px solid #050505;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 input[type='range']::-moz-range-thumb:hover {
   transform: scale(1.15);
-  box-shadow: 0 3px 10px rgba(30, 64, 198, 0.6);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.3);
 }
 
 input[type='range']:focus {

@@ -180,13 +180,13 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                                     />
                                 ))}
                             </div>
-                            <span className="text-white font-geist font-semibold text-base">
+                            <span className="text-white font-sans font-semibold text-base">
                                 {longLabel}
                             </span>
                             {shortLabel && (
                                 <>
                                     <span className="text-brand-textGray text-xs">/</span>
-                                    <span className="text-white font-geist font-semibold text-base">
+                                    <span className="text-white font-sans font-semibold text-base">
                                         {shortLabel}
                                     </span>
                                 </>
@@ -213,7 +213,7 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                         {/* Ratio */}
                         <div className="flex flex-col flex-shrink-0">
                             <span className="text-brand-textGray text-[10px] uppercase tracking-wider">Ratio</span>
-                            <span className="text-white font-geist font-medium text-sm">
+                            <span className="text-white font-sans font-medium text-sm">
                                 {Number(market.ratio || 0).toFixed(4)}
                             </span>
                         </div>
@@ -221,7 +221,7 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                         {/* 24h Change */}
                         <div className="flex flex-col flex-shrink-0">
                             <span className="text-brand-textGray text-[10px] uppercase tracking-wider">24h</span>
-                            <span className={`font-geist font-medium text-sm ${isPositive ? 'text-brand-green' : 'text-brand-red'}`}>
+                            <span className={`font-sans font-medium text-sm ${isPositive ? 'text-brand-green' : 'text-brand-red'}`}>
                                 {isPositive ? '+' : ''}{Number(market.change24h || 0).toFixed(2)}%
                             </span>
                         </div>
@@ -229,7 +229,7 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                         {/* Volume */}
                         <div className="flex flex-col flex-shrink-0">
                             <span className="text-brand-textGray text-[10px] uppercase tracking-wider">Volume</span>
-                            <span className="text-brand-textLight font-geist text-sm">
+                            <span className="text-brand-textLight font-sans text-sm">
                                 ${formatCompact(market.volume24h)}
                             </span>
                         </div>
@@ -237,7 +237,7 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                         {/* Open Interest */}
                         <div className="flex flex-col flex-shrink-0">
                             <span className="text-brand-textGray text-[10px] uppercase tracking-wider">OI</span>
-                            <span className="text-brand-textLight font-geist text-sm">
+                            <span className="text-brand-textLight font-sans text-sm">
                                 ${formatCompact(market.openInterest)}
                             </span>
                         </div>
@@ -245,7 +245,7 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                         {/* Net Funding */}
                         <div className="flex flex-col flex-shrink-0">
                             <span className="text-brand-textGray text-[10px] uppercase tracking-wider">Funding</span>
-                            <span className={`font-geist text-sm ${Number(market.netFunding || 0) >= 0 ? 'text-brand-green' : 'text-brand-red'}`}>
+                            <span className={`font-sans text-sm ${Number(market.netFunding || 0) >= 0 ? 'text-brand-green' : 'text-brand-red'}`}>
                                 {Number(market.netFunding || 0) >= 0 ? '+' : ''}{(Number(market.netFunding || 0) * 100).toFixed(4)}%
                             </span>
                         </div>
@@ -264,7 +264,7 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                             value={searchQuery}
                             onChange={(e) => handleSearch(e.target.value)}
                             placeholder="Search pairs..."
-                            className="w-full px-3 py-1.5 bg-bg-input border border-border rounded-md text-sm text-white placeholder:text-brand-textGray font-geist focus:outline-none focus:border-[#1e40c6] transition-colors"
+                            className="w-full px-3 py-1.5 bg-bg-input border border-border rounded-md text-sm text-white placeholder:text-brand-textGray font-sans focus:outline-none focus:border-[rgba(255,255,255,0.9)] transition-colors"
                         />
                     </div>
 
@@ -275,8 +275,8 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                                 <button
                                     key={section.key}
                                     onClick={() => setActiveSection(section.key)}
-                                    className={`px-2 py-1 text-[11px] font-geist rounded transition-colors ${activeSection === section.key
-                                        ? 'bg-[#1e40c6]/20 text-[#1e40c6]'
+                                    className={`px-2 py-1 text-[11px] font-sans rounded transition-colors ${activeSection === section.key
+                                        ? 'bg-[rgba(255,255,255,0.9)]/20 text-[rgba(255,255,255,0.9)]'
                                         : 'text-brand-textGray hover:text-brand-textLight'
                                         }`}
                                 >
@@ -290,10 +290,10 @@ const PairPriceHeader: React.FC<PairPriceHeaderProps> = ({
                     <div className="flex-1 overflow-y-auto px-1 pb-2">
                         {isLoading || isSearching || allMarketsLoading ? (
                             <div className="flex items-center justify-center py-8">
-                                <div className="w-5 h-5 border-2 border-[#1e40c6]/30 border-t-[#1e40c6] rounded-full animate-spin" />
+                                <div className="w-5 h-5 border-2 border-[rgba(255,255,255,0.9)]/30 border-t-[rgba(255,255,255,0.9)] rounded-full animate-spin" />
                             </div>
                         ) : displayMarkets.length === 0 ? (
-                            <div className="text-center py-8 text-brand-textGray text-xs font-geist">
+                            <div className="text-center py-8 text-brand-textGray text-xs font-sans">
                                 {searchQuery ? 'No pairs found' : 'No markets available'}
                             </div>
                         ) : (
@@ -327,7 +327,7 @@ const DropdownPairRow: React.FC<{
         <button
             onClick={onClick}
             className={`w-full flex items-center justify-between px-3 py-2 rounded-md transition-colors group ${isSelected
-                ? 'bg-[#1e40c6]/10 border border-[#1e40c6]/30'
+                ? 'bg-[rgba(255,255,255,0.9)]/10 border border-[rgba(255,255,255,0.9)]/30'
                 : 'hover:bg-white/[0.03] border border-transparent'
                 }`}
         >
@@ -354,10 +354,10 @@ const DropdownPairRow: React.FC<{
                     ))}
                 </div>
                 <div className="flex flex-col items-start">
-                    <span className="text-white font-geist text-xs font-medium">
+                    <span className="text-white font-sans text-xs font-medium">
                         {longLabel} / {shortLabel}
                     </span>
-                    <span className="text-brand-textGray text-[10px] font-geist">
+                    <span className="text-brand-textGray text-[10px] font-sans">
                         {Number(market.ratio || 0).toFixed(4)}
                     </span>
                 </div>
@@ -365,11 +365,11 @@ const DropdownPairRow: React.FC<{
 
             <div className="flex flex-col items-end">
                 <span
-                    className={`text-xs font-geist font-medium ${isPositive ? 'text-brand-green' : 'text-brand-red'}`}
+                    className={`text-xs font-sans font-medium ${isPositive ? 'text-brand-green' : 'text-brand-red'}`}
                 >
                     {isPositive ? '+' : ''}{Number(market.change24h || 0).toFixed(2)}%
                 </span>
-                <span className="text-brand-textGray text-[10px] font-geist">
+                <span className="text-brand-textGray text-[10px] font-sans">
                     ${formatCompact(market.volume24h)}
                 </span>
             </div>

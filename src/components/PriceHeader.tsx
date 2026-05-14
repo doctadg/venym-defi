@@ -169,7 +169,7 @@ const PriceHeader: React.FC<PriceHeaderProps> = ({
       : undefined
 
   return (
-    <div className="w-full bg-[#14192F] border-b border-white/10 px-4 py-3">
+    <div className="w-full bg-[#121212] border-b border-white/10 px-4 py-3">
       {/* Single Inline Row: All metrics in one line like Hyperliquid */}
       <div className="flex items-center gap-6 flex-wrap">
         {/* Symbol with Logo and Leverage Badge */}
@@ -191,7 +191,7 @@ const PriceHeader: React.FC<PriceHeaderProps> = ({
             )}
             <button
               onClick={onSymbolClick}
-              className="text-white text-lg font-semibold hover:text-[#1e40c6] transition-colors cursor-pointer flex items-center gap-1"
+              className="text-white text-lg font-semibold hover:text-[rgba(255,255,255,0.9)] transition-colors cursor-pointer flex items-center gap-1"
             >
               {symbol}
               <svg
@@ -209,7 +209,7 @@ const PriceHeader: React.FC<PriceHeaderProps> = ({
               </svg>
             </button>
             {leverage && (
-              <span className="px-2 py-0.5 bg-[#1e40c6]/20 text-[#1e40c6] text-xs font-medium rounded">
+              <span className="px-2 py-0.5 bg-[rgba(255,255,255,0.9)]/20 text-[rgba(255,255,255,0.9)] text-xs font-medium rounded">
                 {leverage}x
               </span>
             )}

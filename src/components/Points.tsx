@@ -116,16 +116,16 @@ const Points = () => {
               <span>Next League - Silver</span>
             </div>
             {/* Progress Bar */}
-            <div className="w-full h-2 bg-[#292929] rounded-full overflow-hidden mb-4">
+            <div className="w-full h-2 bg-[#1a1a1a] rounded-full overflow-hidden mb-4">
               <div className="h-full w-[33%] bg-[#2F5AF5]" />
             </div>
-            <p className="text-[#BBBBBB] text-sm">
+            <p className="text-[#8E8E8E] text-sm">
               Invite friends with your referral link and earn up to 15% of their
               trading points.
             </p>
           </div>
 
-          <div className="grid grid-cols-5 gap-4 mt-8 pt-6 border-t border-[#252525]">
+          <div className="grid grid-cols-5 gap-4 mt-8 pt-6 border-t border-[#1a1a1a]">
             <div className="flex flex-col gap-1">
               <span className="text-[10px] text-[#666]">Users referred</span>
               <span className="text-white text-sm">
@@ -160,7 +160,7 @@ const Points = () => {
           <span className="text-[#8E8E8E] text-sm">Your Referral Link</span>
           {referralLink ? (
             <>
-              <div className="bg-[#161616] border border-[#252525] rounded-lg px-4 py-3 text-white text-sm truncate">
+              <div className="bg-[#161616] border border-[#1a1a1a] rounded-lg px-4 py-3 text-white text-sm truncate">
                 {referralLink}
               </div>
               <div>
@@ -177,13 +177,13 @@ const Points = () => {
             </>
           ) : (
             <div className="flex flex-col gap-4">
-              <p className="text-[#BBBBBB] text-sm">
+              <p className="text-[#8E8E8E] text-sm">
                 You haven't generated your referral code yet.
               </p>
               <button
                 onClick={handleGenerateCode}
                 disabled={loading || !primaryWallet?.address}
-                className="w-fit bg-brand-gold text-black px-6 py-2 text-white rounded-xl font-bold hover:bg-brand-gold/90 transition-all disabled:opacity-50"
+                className="w-fit bg-white/90 text-black px-6 py-2 text-white rounded-xl font-bold hover:bg-white transition-all disabled:opacity-50"
               >
                 {loading ? 'Generating...' : 'Generate Code'}
               </button>

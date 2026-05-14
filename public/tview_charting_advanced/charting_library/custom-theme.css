@@ -1,80 +1,80 @@
-/* TradingView Custom Theme - Override blue colors with brand colors */
+/* TradingView Custom Theme - Venym26 Dark Theme */
 
 /* Active buttons and selected states */
 .tv-button--active,
 .tv-button--checked,
 .tv-control-select__wrap--active {
-  background-color: #1e40c6 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Button hover states */
 .tv-button:hover,
 .tv-control-select__wrap:hover {
-  background-color: rgba(30, 64, 198, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Primary accent color (replaces blue) */
+/* Primary accent color */
 :root {
-  --tv-color-platform-background: #1a1f3a !important;
-  --tv-color-pane-background: #1a1f3a !important;
-  --tv-color-toolbar-button-background-active: #1e40c6 !important;
-  --tv-color-toolbar-button-background-hover: rgba(30, 64, 198, 0.1) !important;
-  --tv-color-item-active-background: #1e40c6 !important;
-  --tv-color-popup-background: #1e2544 !important;
+  --tv-color-platform-background: #121212 !important;
+  --tv-color-pane-background: #121212 !important;
+  --tv-color-toolbar-button-background-active: rgba(255, 255, 255, 0.15) !important;
+  --tv-color-toolbar-button-background-hover: rgba(255, 255, 255, 0.08) !important;
+  --tv-color-item-active-background: rgba(255, 255, 255, 0.15) !important;
+  --tv-color-popup-background: #121212 !important;
 }
 
 /* Dialog and menu backgrounds */
 .tv-dialog,
 .tv-dropdown-behavior__body,
 .tv-menu__item {
-  background-color: #1e2544 !important;
+  background-color: #121212 !important;
 }
 
 /* Menu item hover */
 .tv-menu__item:hover {
-  background-color: rgba(30, 64, 198, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
 /* Checkmark color */
 .tv-control-checkbox__box--checked,
 .tv-radio--checked {
-  background-color: #1e40c6 !important;
-  border-color: #1e40c6 !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
 }
 
 /* Selected menu item */
 .tv-menu__item--active {
-  background-color: rgba(30, 64, 198, 0.15) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Scrollbars */
 ::-webkit-scrollbar-thumb {
-  background-color: #1e40c6 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Links and accents */
 a,
 .tv-link {
-  color: #1e40c6 !important;
+  color: #e4e4e7 !important;
 }
 
 /* Tab active state */
 .tv-tabs__tab--active {
-  border-bottom-color: #1e40c6 !important;
-  color: #1e40c6 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.9) !important;
+  color: #e4e4e7 !important;
 }
 
 /* Input focus */
 input:focus,
 textarea:focus,
 .tv-control-input__input:focus {
-  border-color: #1e40c6 !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 /* Remove blue from scale settings buttons (A and L buttons) */
 .tv-chart-pane__chart-price-axis-left-controls button[aria-checked='true'],
 .tv-chart-pane__chart-price-axis-right-controls button[aria-checked='true'] {
-  background-color: #1e40c6 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Hide symbol selector/search in TradingView header widget, keep everything else */
@@ -142,7 +142,7 @@ button[data-name='indicators'] {
   margin: 0 2px !important;
   padding: 4px 8px !important;
   border-radius: 4px !important;
-  background-color: #292929 !important;
+  background-color: #1a1a1a !important;
   color: #8e8e8e !important;
   border: 1px solid transparent !important;
   cursor: pointer !important;
@@ -151,16 +151,16 @@ button[data-name='indicators'] {
 
 .tv-header__resolutions button:hover,
 .tv-header__resolution-select button:hover {
-  background-color: #dee3f1 !important;
-  color: white !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e4e4e7 !important;
 }
 
 .tv-header__resolutions button.tv-button--active,
 .tv-header__resolutions .tv-button--active,
 .tv-header__resolution-select button.tv-button--active {
-  background-color: #1e40c6 !important;
-  color: white !important;
-  border-color: #1e40c6 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #e4e4e7 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 /* Alternative: Target resolution control-select directly */
@@ -194,7 +194,7 @@ button[data-name='indicators'] {
   margin: 0 2px !important;
   padding: 4px 8px !important;
   border-radius: 4px !important;
-  background-color: #292929 !important;
+  background-color: #1a1a1a !important;
   color: #8e8e8e !important;
   border: 1px solid transparent !important;
   cursor: pointer !important;
@@ -202,12 +202,12 @@ button[data-name='indicators'] {
 }
 
 .tv-header__timeframes button:hover {
-  background-color: #dee3f1 !important;
-  color: white !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e4e4e7 !important;
 }
 
 .tv-header__timeframes button.tv-button--active {
-  background-color: #1e40c6 !important;
-  color: white !important;
-  border-color: #1e40c6 !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #e4e4e7 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }

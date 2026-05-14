@@ -2,7 +2,7 @@ import React from 'react'
 import { ChevronDown } from './Icons'
 
 const LeaderboardRow = ({ rank, trader, value, pnl, roi, volume }: any) => (
-  <div className="grid grid-cols-6 px-6 py-6 border-b border-[#252525] hover:bg-[#252525] cursor-pointer transition-colors text-sm">
+  <div className="grid grid-cols-6 px-6 py-6 border-b border-[#1a1a1a] hover:bg-[#1a1a1a] cursor-pointer transition-colors text-sm">
     <span className="text-white">{rank}</span>
     <span className="text-white font-medium">{trader}</span>
     <span className="text-white">{value}</span>
@@ -49,14 +49,14 @@ const Leaderboard = () => {
             on the leaderboard - all in one place.
           </p>
         </div>
-        <div className="flex items-center gap-2 bg-[#292929] px-3 py-1.5 rounded-lg cursor-pointer hover:bg-[#dee3f1] text-xs text-[#BBBBBB]">
+        <div className="flex items-center gap-2 bg-[#1a1a1a] px-3 py-1.5 rounded-lg cursor-pointer hover:bg-[rgba(255,255,255,0.1)] text-xs text-[#8E8E8E]">
           7 days <ChevronDown className="w-3 h-3" />
         </div>
       </div>
 
       {/* Table */}
       <div className="bg-bg-card border border-border rounded-2xl flex flex-col overflow-hidden mt-2">
-        <div className="grid grid-cols-6 px-6 py-4 border-b border-[#252525] bg-[#1e2544]">
+        <div className="grid grid-cols-6 px-6 py-4 border-b border-[#1a1a1a] bg-[#121212]">
           {['RANK', 'TRADER', 'POINTS', 'PNL', 'ROI', 'VOLUME'].map((h) => (
             <span
               key={h}

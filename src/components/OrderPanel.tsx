@@ -480,7 +480,7 @@ const OrderPanel = ({
       <div className="flex p-1.5 bg-bg-input rounded-xl">
         <button
           onClick={() => setSide(OrderSide.LONG)}
-          className={`flex-1 h-9 rounded-lg text-base font-medium font-geist transition-all ${side === OrderSide.LONG
+          className={`flex-1 h-9 rounded-lg text-base font-medium font-sans transition-all ${side === OrderSide.LONG
             ? 'bg-[#2B4942] text-brand-green'
             : 'text-[#5C5C5C] hover:text-white'
             }`}
@@ -489,7 +489,7 @@ const OrderPanel = ({
         </button>
         <button
           onClick={() => setSide(OrderSide.SHORT)}
-          className={`flex-1 h-9 rounded-lg text-base font-medium font-geist transition-all ${side === OrderSide.SHORT
+          className={`flex-1 h-9 rounded-lg text-base font-medium font-sans transition-all ${side === OrderSide.SHORT
             ? 'bg-[#492B2B] text-brand-red'
             : 'text-[#5C5C5C] hover:text-white'
             }`}
@@ -508,9 +508,9 @@ const OrderPanel = ({
               key={type}
               onClick={() => setOrderType(type)}
               disabled={type === 'Zero Fee' && !zfpSupported}
-              className={`flex-1 py-2 rounded-lg text-xs font-geist border transition-all
+              className={`flex-1 py-2 rounded-lg text-xs font-sans border transition-all
                     ${orderType === type
-                  ? 'bg-bg-panel border-brand-gold text-brand-gold'
+                  ? 'bg-bg-panel border-white/50 text-white'
                   : type === 'Zero Fee' && !zfpSupported
                     ? 'bg-bg-panel border-border-light text-[#333] cursor-not-allowed'
                     : 'bg-bg-panel border-border-light text-[#8E8E8E] hover:text-white'
@@ -532,7 +532,7 @@ const OrderPanel = ({
               {activeSymbol}
             </span>
             <div className="flex items-center gap-2">
-              <div className="w-[18px] h-[18px] rounded-full bg-brand-gold/20 border-[0.3px] border-brand-gold/40 flex items-center justify-center">
+              <div className="w-[18px] h-[18px] rounded-full bg-white/10 border-[0.3px] border-white/50/40 flex items-center justify-center">
                 <BitcoinLogo className="w-3 h-3" />
               </div>
               <span className="text-white font-medium text-sm">
@@ -561,7 +561,7 @@ const OrderPanel = ({
               </span>
             </div>
             <span
-              className="text-brand-gold text-xs font-medium cursor-pointer hover:underline"
+              className="text-white text-xs font-medium cursor-pointer hover:underline"
               onClick={onDepositClick}
             >
               Deposit / Withdraw
@@ -596,8 +596,8 @@ const OrderPanel = ({
               onChange={(e) => setLeverage(parseInt(e.target.value))}
               className="w-full h-2 appearance-none cursor-pointer rounded-full"
               style={{
-                background: `linear-gradient(to right, #1e40c6 0%, #1e40c6 ${((leverage - effectiveMinLeverage) / (effectiveMaxLeverage - effectiveMinLeverage)) * 100
-                  }%, #1e2544 ${((leverage - effectiveMinLeverage) / (effectiveMaxLeverage - effectiveMinLeverage)) * 100}%, #1e2544 100%)`,
+                background: `linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) ${((leverage - effectiveMinLeverage) / (effectiveMaxLeverage - effectiveMinLeverage)) * 100
+                  }%, #121212 ${((leverage - effectiveMinLeverage) / (effectiveMaxLeverage - effectiveMinLeverage)) * 100}%, #121212 100%)`,
               }}
             />
           </div>
@@ -611,7 +611,7 @@ const OrderPanel = ({
                 key={val}
                 onClick={() => setLeverage(val)}
                 className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${leverage === val
-                  ? 'bg-brand-gold text-white'
+                  ? 'bg-white/90 text-white'
                   : 'bg-white/5 text-[#8E8E8E] hover:bg-white/10 hover:text-white'
                   }`}
               >
@@ -672,7 +672,7 @@ const OrderPanel = ({
                 onChange={(e) => setSizePercent(parseInt(e.target.value))}
                 className="w-full h-2 appearance-none cursor-pointer rounded-full relative z-20"
                 style={{
-                  background: `linear-gradient(to right, #1e40c6 0%, #1e40c6 ${sizePercent}%, rgba(255,255,255,0.05) ${sizePercent}%, rgba(255,255,255,0.05) 100%)`,
+                  background: `linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.9) ${sizePercent}%, rgba(255,255,255,0.05) ${sizePercent}%, rgba(255,255,255,0.05) 100%)`,
                 }}
               />
             </div>
@@ -701,9 +701,9 @@ const OrderPanel = ({
           <InfoIcon className="w-3 h-3 text-[#5A5957]" />
         </div>
 
-        <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5 hover:border-brand-gold/50 cursor-pointer transition-all">
-          <div className="w-3.5 h-3.5 bg-[#1e40c6] rounded" />
-          <span className="text-[#1e40c6] text-xs">Best Offer</span>
+        <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5 hover:border-white/50/50 cursor-pointer transition-all">
+          <div className="w-3.5 h-3.5 bg-[rgba(255,255,255,0.9)] rounded" />
+          <span className="text-[rgba(255,255,255,0.9)] text-xs">Best Offer</span>
           <InfoIcon className="w-3 h-3 text-[#8E8E8E]" />
         </div>
       </div>
@@ -744,13 +744,13 @@ const OrderPanel = ({
           </Button>
           {/* Tooltip for disabled state */}
           {activeSetup.needsDeposit && (
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#1e2544] border border-brand-gold/30 rounded-lg text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-50 shadow-lg">
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#121212] border border-white/50/30 rounded-lg text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-50 shadow-lg">
               <div className="flex items-center justify-center gap-2">
-                <AlertTriangleIcon className="w-4 h-4 text-brand-gold" />
+                <AlertTriangleIcon className="w-4 h-4 text-white" />
                 <span className="text-center">{activeSetup.depositTooltip}</span>
               </div>
               <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1">
-                <div className="border-4 border-transparent border-t-[#1e2544]"></div>
+                <div className="border-4 border-transparent border-t-[#121212]"></div>
               </div>
             </div>
           )}

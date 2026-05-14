@@ -20,7 +20,7 @@ const MobileAssetBar: React.FC<MobileAssetBarProps> = ({ symbol, onSymbolClick }
     const displaySymbol = symbol.split('/')[0];
 
     return (
-        <div className="flex items-center justify-between px-4 py-3 bg-[#14192F] border-b border-white/10">
+        <div className="flex items-center justify-between px-4 py-3 bg-[#121212] border-b border-white/10">
             {/* Left: Symbol Selector */}
             <button
                 onClick={onSymbolClick}
@@ -38,8 +38,8 @@ const MobileAssetBar: React.FC<MobileAssetBarProps> = ({ symbol, onSymbolClick }
                             }}
                         />
                     ) : (
-                        <div className="w-6 h-6 rounded-full bg-brand-gold/20 flex items-center justify-center">
-                            <span className="text-xs font-bold text-brand-gold">
+                        <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
+                            <span className="text-xs font-bold text-white">
                                 {symbol.charAt(0)}
                             </span>
                         </div>

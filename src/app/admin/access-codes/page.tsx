@@ -253,13 +253,13 @@ export default function AdminAccessCodesPage() {
     // Not logged in
     if (!isLoggedIn) {
         return (
-            <div className="min-h-screen bg-[#0A0E17] flex items-center justify-center p-4">
-                <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-md w-full text-center">
+            <div className="min-h-screen bg-[#050505] flex items-center justify-center p-4">
+                <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-md w-full text-center">
                     <h1 className="text-2xl font-bold text-white mb-4">Admin Access Required</h1>
                     <p className="text-white/60 mb-6">Connect your admin wallet to manage access codes.</p>
                     <button
                         onClick={() => setShowAuthFlow(true)}
-                        className="px-6 py-3 bg-brand-gold text-white font-bold rounded-xl hover:scale-105 transition-transform"
+                        className="px-6 py-3 bg-white/90 text-white font-bold rounded-xl hover:scale-105 transition-transform"
                     >
                         Connect Wallet
                     </button>
@@ -271,12 +271,12 @@ export default function AdminAccessCodesPage() {
     // Not admin
     if (!isAdmin) {
         return (
-            <div className="min-h-screen bg-[#0A0E17] flex items-center justify-center p-4">
-                <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-md w-full text-center">
+            <div className="min-h-screen bg-[#050505] flex items-center justify-center p-4">
+                <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 max-w-md w-full text-center">
                     <h1 className="text-2xl font-bold text-white mb-4">Access Denied</h1>
                     <p className="text-white/60 mb-4">This wallet is not authorized to manage access codes.</p>
                     <p className="text-white/40 text-sm font-mono mb-6">{primaryWallet?.address}</p>
-                    <Link href="/" className="text-brand-gold hover:underline">
+                    <Link href="/" className="text-white hover:underline">
                         ← Back to Home
                     </Link>
                 </div>
@@ -288,7 +288,7 @@ export default function AdminAccessCodesPage() {
     const usedCodes = codes.filter(c => c.isUsed)
 
     return (
-        <div className="min-h-screen bg-[#0A0E17] p-4 md:p-8">
+        <div className="min-h-screen bg-[#050505] p-4 md:p-8">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
@@ -306,7 +306,7 @@ export default function AdminAccessCodesPage() {
                     <button
                         onClick={() => setActiveTab('codes')}
                         className={`px-6 py-3 rounded-xl font-bold text-sm transition-colors ${activeTab === 'codes'
-                            ? 'bg-brand-gold text-white'
+                            ? 'bg-white/90 text-white'
                             : 'bg-white/5 text-white/60 hover:bg-white/10'
                             }`}
                     >
@@ -315,7 +315,7 @@ export default function AdminAccessCodesPage() {
                     <button
                         onClick={() => setActiveTab('waitlist')}
                         className={`px-6 py-3 rounded-xl font-bold text-sm transition-colors ${activeTab === 'waitlist'
-                            ? 'bg-brand-gold text-white'
+                            ? 'bg-white/90 text-white'
                             : 'bg-white/5 text-white/60 hover:bg-white/10'
                             }`}
                     >
@@ -333,22 +333,22 @@ export default function AdminAccessCodesPage() {
                     <>
                         {/* Stats */}
                         <div className="grid grid-cols-3 gap-4 mb-8">
-                            <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-xl p-4">
+                            <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-xl p-4">
                                 <p className="text-white/40 text-sm">Total Codes</p>
                                 <p className="text-2xl font-bold text-white">{codes.length}</p>
                             </div>
-                            <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-xl p-4">
+                            <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-xl p-4">
                                 <p className="text-white/40 text-sm">Available</p>
                                 <p className="text-2xl font-bold text-green-400">{unusedCodes.length}</p>
                             </div>
-                            <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-xl p-4">
+                            <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-xl p-4">
                                 <p className="text-white/40 text-sm">Used</p>
                                 <p className="text-2xl font-bold text-white/60">{usedCodes.length}</p>
                             </div>
                         </div>
 
                         {/* Generate Section */}
-                        <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-xl p-6 mb-8">
+                        <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-xl p-6 mb-8">
                             <h2 className="text-lg font-bold text-white mb-4">Generate New Codes</h2>
                             <div className="flex flex-wrap gap-4 items-end">
                                 <div>
@@ -359,7 +359,7 @@ export default function AdminAccessCodesPage() {
                                         max={100}
                                         value={generateCount}
                                         onChange={(e) => setGenerateCount(Math.max(1, Math.min(100, parseInt(e.target.value) || 1)))}
-                                        className="w-24 bg-[#0A0E17] border border-white/10 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-gold/50"
+                                        className="w-24 bg-[#050505] border border-white/10 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-white/50/50"
                                     />
                                 </div>
                                 <div className="flex-1 min-w-[200px]">
@@ -369,13 +369,13 @@ export default function AdminAccessCodesPage() {
                                         value={generateNote}
                                         onChange={(e) => setGenerateNote(e.target.value)}
                                         placeholder="e.g. Beta testers batch 1"
-                                        className="w-full bg-[#0A0E17] border border-white/10 rounded-lg px-3 py-2 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-gold/50"
+                                        className="w-full bg-[#050505] border border-white/10 rounded-lg px-3 py-2 text-white placeholder:text-white/20 focus:outline-none focus:border-white/50/50"
                                     />
                                 </div>
                                 <button
                                     onClick={generateCodes}
                                     disabled={generating}
-                                    className="px-6 py-2 bg-brand-gold text-white font-bold rounded-lg hover:scale-105 transition-transform disabled:opacity-50"
+                                    className="px-6 py-2 bg-white/90 text-white font-bold rounded-lg hover:scale-105 transition-transform disabled:opacity-50"
                                 >
                                     {generating ? 'Generating...' : `Generate ${generateCount} Code${generateCount > 1 ? 's' : ''}`}
                                 </button>
@@ -389,7 +389,7 @@ export default function AdminAccessCodesPage() {
                                     key={f}
                                     onClick={() => { setFilter(f); }}
                                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${filter === f
-                                        ? 'bg-brand-gold text-white'
+                                        ? 'bg-white/90 text-white'
                                         : 'bg-white/5 text-white/60 hover:bg-white/10'
                                         }`}
                                 >
@@ -421,7 +421,7 @@ export default function AdminAccessCodesPage() {
                         </div>
 
                         {/* Codes Table */}
-                        <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
+                        <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
                             {loading ? (
                                 <div className="p-8 text-center text-white/40">Loading...</div>
                             ) : codes.length === 0 ? (
@@ -492,7 +492,7 @@ export default function AdminAccessCodesPage() {
                     <>
                         {/* Waitlist Stats and Search */}
                         <div className="grid grid-cols-1 gap-4 mb-4">
-                            <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                            <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                                 <div>
                                     <p className="text-white/40 text-sm">Pending Users</p>
                                     <p className="text-2xl font-bold text-white">{waitlistUsers.length}</p>
@@ -503,7 +503,7 @@ export default function AdminAccessCodesPage() {
                                         placeholder="Search wallet address..."
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
-                                        className="flex-1 bg-[#0A0E17] border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-gold/50"
+                                        className="flex-1 bg-[#050505] border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-white/20 focus:outline-none focus:border-white/50/50"
                                     />
                                     <button
                                         onClick={fetchWaitlist}
@@ -516,7 +516,7 @@ export default function AdminAccessCodesPage() {
                         </div>
 
                         {/* Waitlist Table */}
-                        <div className="bg-[#14192F]/60 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
+                        <div className="bg-[#121212]/60 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
                             {waitlistLoading ? (
                                 <div className="p-8 text-center text-white/40">Loading...</div>
                             ) : waitlistUsers.length === 0 ? (

@@ -213,7 +213,7 @@ export async function GET(request: Request) {
                 >
                   <img
                     src={`${APP_URL}/tidebluefull.svg`}
-                    alt="Tide"
+                    alt="Venym"
                     style={{ width: '140px', height: '48px' }}
                   />
 

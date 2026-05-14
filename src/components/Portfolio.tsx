@@ -22,12 +22,12 @@ const StatCard = ({
     <div className="flex justify-between items-start">
       <span className="text-[#8E8E8E] text-sm">{label}</span>
       {subAction && (
-        <button className="text-[10px] text-[#BBBBBB] px-2.5 py-1 rounded-full border border-[#DEE3F1] hover:bg-[#DEE3F1] transition-colors">
+        <button className="text-[10px] text-[#8E8E8E] px-2.5 py-1 rounded-full border border-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.1)] transition-colors">
           {subAction}
         </button>
       )}
     </div>
-    <span className="text-3xl font-geist font-medium text-white tracking-tight">
+    <span className="text-3xl font-sans font-medium text-white tracking-tight">
       {value}
     </span>
   </div>
@@ -50,7 +50,7 @@ const TabButton = ({
   >
     {label}
     {active && (
-      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#1e40c6] rounded-t-full" />
+      <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[rgba(255,255,255,0.9)] rounded-t-full" />
     )}
   </button>
 )
@@ -60,7 +60,7 @@ const PositionRow = ({ data }: { data: Position }) => {
   const pnlValue = parseFloat(data.unrealizedPnl)
 
   return (
-    <tr className="border-b border-[#252525] hover:bg-[#252525]/30 transition-colors group">
+    <tr className="border-b border-[#1a1a1a] hover:bg-[#1a1a1a]/30 transition-colors group">
       <td className="py-3 px-4 first:pl-6">
         <div className="flex items-center gap-2">
           <span
@@ -103,7 +103,7 @@ const PositionRow = ({ data }: { data: Position }) => {
           </span>
         </div>
       </td>
-      <td className="py-3 px-4 text-xs text-[#BBBBBB]">
+      <td className="py-3 px-4 text-xs text-[#8E8E8E]">
         {data.liquidationPrice}
       </td>
       <td className="py-3 px-4 text-xs text-white">{data.collateral}</td>
@@ -113,7 +113,7 @@ const PositionRow = ({ data }: { data: Position }) => {
 }
 
 const OrderRow = ({ data }: { data: Order }) => (
-  <tr className="border-b border-[#252525] hover:bg-[#252525]/30 transition-colors group">
+  <tr className="border-b border-[#1a1a1a] hover:bg-[#1a1a1a]/30 transition-colors group">
     <td className="py-3 px-4 first:pl-6 text-xs text-white">
       {new Date(data.timestamp).toLocaleString()}
     </td>
@@ -134,12 +134,12 @@ const OrderRow = ({ data }: { data: Order }) => (
     <td className="py-3 px-4 text-xs text-white">
       {data.filledQuantity || '0'}
     </td>
-    <td className="py-3 px-4 text-xs text-[#BBBBBB]">{data.status}</td>
+    <td className="py-3 px-4 text-xs text-[#8E8E8E]">{data.status}</td>
   </tr>
 )
 
 const TradeRow = ({ data }: { data: Trade }) => (
-  <tr className="border-b border-[#252525] hover:bg-[#252525]/30 transition-colors group">
+  <tr className="border-b border-[#1a1a1a] hover:bg-[#1a1a1a]/30 transition-colors group">
     <td className="py-3 px-4 first:pl-6 text-xs text-white">
       {new Date(data.timestamp).toLocaleString()}
     </td>
@@ -161,7 +161,7 @@ const TradeRow = ({ data }: { data: Trade }) => (
 )
 
 const FundingRow = ({ data }: { data: any }) => (
-  <tr className="border-b border-[#252525] hover:bg-[#252525]/30 transition-colors group">
+  <tr className="border-b border-[#1a1a1a] hover:bg-[#1a1a1a]/30 transition-colors group">
     <td className="py-3 px-4 first:pl-6 text-xs text-white">
       {new Date(data.timestamp).toLocaleString()}
     </td>
@@ -261,7 +261,7 @@ const Portfolio = () => {
     if (activeTab === 'positions') {
       return (
         <>
-          <div className="grid grid-cols-9 gap-2 px-6 py-3  bg-[#1e2544]">
+          <div className="grid grid-cols-9 gap-2 px-6 py-3  bg-[#121212]">
             {[
               'Token',
               'Side',
@@ -310,7 +310,7 @@ const Portfolio = () => {
     if (activeTab === 'openOrders') {
       return (
         <>
-          <div className="grid grid-cols-8 gap-2 px-6 py-3  bg-[#1e2544]">
+          <div className="grid grid-cols-8 gap-2 px-6 py-3  bg-[#121212]">
             {[
               'Time',
               'Symbol',
@@ -358,7 +358,7 @@ const Portfolio = () => {
     if (activeTab === 'orderHistory') {
       return (
         <>
-          <div className="grid grid-cols-8 gap-2 px-6 py-3  bg-[#1e2544]">
+          <div className="grid grid-cols-8 gap-2 px-6 py-3  bg-[#121212]">
             {[
               'Time',
               'Symbol',
@@ -406,7 +406,7 @@ const Portfolio = () => {
     if (activeTab === 'tradeHistory') {
       return (
         <>
-          <div className="grid grid-cols-6 gap-2 px-6 py-3  bg-[#1e2544]">
+          <div className="grid grid-cols-6 gap-2 px-6 py-3  bg-[#121212]">
             {['Time', 'Symbol', 'Side', 'Price', 'Size', 'Exchange'].map(
               (h) => (
                 <span key={h} className="text-[10px] text-[#5C5C5C] uppercase">
@@ -447,7 +447,7 @@ const Portfolio = () => {
     if (activeTab === 'fundingHistory') {
       return (
         <>
-          <div className="grid grid-cols-5 gap-2 px-6 py-3  bg-[#1e2544]">
+          <div className="grid grid-cols-5 gap-2 px-6 py-3  bg-[#121212]">
             {['Time', 'Symbol', 'Amount', 'Rate', 'Mark Price'].map((h) => (
               <span key={h} className="text-[10px] text-[#5C5C5C] uppercase">
                 {h}
@@ -496,7 +496,7 @@ const Portfolio = () => {
         </div>
         <button
           onClick={() => setIsTelegramModalOpen(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-[#1e2544] hover:bg-[#2a345e] text-white text-sm font-medium rounded-lg border border-[#2a345e] transition-all group"
+          className="flex items-center gap-2 px-4 py-2 bg-[#121212] hover:bg-[#1a1a1a] text-white text-sm font-medium rounded-lg border border-[#1a1a1a] transition-all group"
         >
           <img src="/telegram_logo.png" alt="Telegram" className="w-5 h-5" />
           <span>Link Telegram</span>
@@ -539,7 +539,7 @@ const Portfolio = () => {
                   <span className="text-xs font-semibold text-[#8E8E8E]">
                     Server Wallet (Arbitrum)
                   </span>
-                  <div className="flex justify-between items-center text-xs group hover:bg-[#252525]/30 p-2 rounded-lg transition-colors">
+                  <div className="flex justify-between items-center text-xs group hover:bg-[#1a1a1a]/30 p-2 rounded-lg transition-colors">
                     <div className="flex flex-col gap-0.5">
                       <span className="text-white font-medium">ETH</span>
                     </div>
@@ -549,7 +549,7 @@ const Portfolio = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="flex justify-between items-center text-xs group hover:bg-[#252525]/30 p-2 rounded-lg transition-colors">
+                  <div className="flex justify-between items-center text-xs group hover:bg-[#1a1a1a]/30 p-2 rounded-lg transition-colors">
                     <div className="flex flex-col gap-0.5">
                       <span className="text-white font-medium">USDC</span>
                     </div>
@@ -568,7 +568,7 @@ const Portfolio = () => {
                   <span className="text-xs font-semibold text-[#8E8E8E]">
                     Hyperliquid
                   </span>
-                  <div className="flex justify-between items-center text-xs group hover:bg-[#252525]/30 p-2 rounded-lg transition-colors">
+                  <div className="flex justify-between items-center text-xs group hover:bg-[#1a1a1a]/30 p-2 rounded-lg transition-colors">
                     <div className="flex flex-col gap-0.5">
                       <span className="text-white font-medium">USDC</span>
                       <span className="text-[10px] text-[#666]">
@@ -600,7 +600,7 @@ const Portfolio = () => {
                     {balanceData.aster.map((balance, i) => (
                       <div
                         key={i}
-                        className="flex justify-between items-center text-xs group hover:bg-[#252525]/30 p-2 rounded-lg transition-colors"
+                        className="flex justify-between items-center text-xs group hover:bg-[#1a1a1a]/30 p-2 rounded-lg transition-colors"
                       >
                         <div className="flex flex-col gap-0.5">
                           <span className="text-white font-medium">
@@ -626,16 +626,16 @@ const Portfolio = () => {
         {/* Main Chart */}
         <div className="lg:col-span-3 bg-bg-card border border-border rounded-2xl p-6 h-[400px] flex flex-col">
           <div className="flex justify-between items-center mb-4">
-            <div className="flex items-center gap-8 border-b border-[#252525] w-full">
+            <div className="flex items-center gap-8 border-b border-[#1a1a1a] w-full">
               <TabButton label="Account Equity" active />
               <TabButton label="PnL" />
             </div>
-            <div className="flex items-center gap-1 text-xs text-[#fff] bg-[#1e2544] px-3 py-1.5 rounded-lg cursor-pointer ml-4 whitespace-nowrap">
+            <div className="flex items-center gap-1 text-xs text-[#fff] bg-[#121212] px-3 py-1.5 rounded-lg cursor-pointer ml-4 whitespace-nowrap">
               30 Days <ChevronDown className="w-3 h-3" />
             </div>
           </div>
 
-          <div className="flex-1 flex flex-col items-center justify-center bg-[#1e2544] rounded-xl gap-3">
+          <div className="flex-1 flex flex-col items-center justify-center bg-[#121212] rounded-xl gap-3">
             <div className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center">
               <ChartLineUpIcon className="w-5 h-5 text-brand-red" />
             </div>
@@ -674,7 +674,7 @@ const Portfolio = () => {
               onClick={() => setActiveTab('fundingHistory')}
             />
           </div>
-          <div className="flex items-center gap-1 text-xs text-[#fff] bg-[#1e2544] px-3 py-1.5 rounded-lg cursor-pointer">
+          <div className="flex items-center gap-1 text-xs text-[#fff] bg-[#121212] px-3 py-1.5 rounded-lg cursor-pointer">
             30 Days <ChevronDown className="w-3 h-3" />
           </div>
         </div>

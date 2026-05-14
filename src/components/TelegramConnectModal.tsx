@@ -54,7 +54,7 @@ const TelegramConnectModal: React.FC<TelegramConnectModalProps> = ({
         </div>
 
         <div className="space-y-4">
-          <div className="bg-gradient-to-br from-[#0f1419] to-[#0a0e17] rounded-xl p-6 border border-[#1e2834] shadow-inner">
+          <div className="bg-gradient-to-br from-[#0f1419] to-[#050505] rounded-xl p-6 border border-[#1e2834] shadow-inner">
             <div className="flex justify-between items-center mb-4">
               <span className="text-xs font-semibold text-[#8b9dc3] uppercase tracking-wider w-full text-center">
                 Your Link Code

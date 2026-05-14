@@ -28,14 +28,14 @@ const OrderBookRow: React.FC<OrderBookRowProps> = ({
   const logoUrl = primaryPlatform ? PLATFORM_LOGOS[primaryPlatform] : undefined
 
   return (
-    <div className="flex items-center justify-between py-1 px-1 hover:bg-white/5 cursor-pointer group rounded text-[11px] font-geist leading-4">
+    <div className="flex items-center justify-between py-1 px-1 hover:bg-white/5 cursor-pointer group rounded text-[11px] font-sans leading-4">
       <span
         className={`flex-1 ${type === 'ask' ? 'text-brand-red' : 'text-brand-green'
           }`}
       >
         {price}
       </span>
-      <span className="flex-1 text-right text-[#BBBBBB] group-hover:text-white">
+      <span className="flex-1 text-right text-[#8E8E8E] group-hover:text-white">
         {size}
       </span>
       <div className="flex-none w-8 flex justify-end pr-1">
@@ -120,7 +120,7 @@ const OrderBook = ({ activeSymbol }: { activeSymbol: string }) => {
       </div>
 
       {/* Best Stats */}
-      <div className="flex flex-col gap-1.5 mb-3 text-xs font-geist">
+      <div className="flex flex-col gap-1.5 mb-3 text-xs font-sans">
         <div className="flex justify-between items-center px-1">
           <span className="text-brand-red">Best Buy:</span>
           <div className="flex items-center gap-2">
@@ -133,7 +133,7 @@ const OrderBook = ({ activeSymbol }: { activeSymbol: string }) => {
             ) : (
               <SourceIcon className="w-3 h-3" />
             )}
-            <span className="text-brand-gold">
+            <span className="text-white">
               ${bestBid.toLocaleString('en-US', { minimumFractionDigits: 2 })}
             </span>
           </div>
@@ -158,7 +158,7 @@ const OrderBook = ({ activeSymbol }: { activeSymbol: string }) => {
       </div>
 
       {/* Column Headers */}
-      <div className="flex justify-between items-center px-1 mb-2 text-[10px] text-[#5C5C5C] font-geist uppercase font-bold">
+      <div className="flex justify-between items-center px-1 mb-2 text-[10px] text-[#5C5C5C] font-sans uppercase font-bold">
         <span className="flex-1">Price</span>
         <span className="flex-1 text-right">Size (BTC)</span>
         <span className="flex-none w-8 text-right">Source</span>
@@ -179,7 +179,7 @@ const OrderBook = ({ activeSymbol }: { activeSymbol: string }) => {
 
       {/* Spread */}
       <div className="flex items-center justify-between py-2 my-1 border-y border-white/10 bg-white/5 px-2">
-        <span className="text-white font-geist text-sm font-medium">
+        <span className="text-white font-sans text-sm font-medium">
           $
           {((bestBid + bestAsk) / 2).toLocaleString('en-US', {
             minimumFractionDigits: 2,

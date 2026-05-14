@@ -159,18 +159,18 @@ const ExchangeSettingsSection = () => {
   return (
     <div className="w-full">
       {/* Section Header */}
-      <h2 className="text-white text-lg font-semibold font-geist mb-4">Exchanges</h2>
+      <h2 className="text-white text-lg font-semibold font-sans mb-4">Exchanges</h2>
 
       {/* Table */}
       <div className="w-full overflow-x-auto">
         <table className="w-full text-left">
           <thead>
             <tr className="border-b border-white/10">
-              <th className="text-[#8E8E8E] text-xs font-medium font-geist py-3 pr-4 pl-2">Exchange</th>
-              <th className="text-[#8E8E8E] text-xs font-medium font-geist py-3 px-4">Address</th>
-              <th className="text-[#8E8E8E] text-xs font-medium font-geist py-3 px-4">Total Equity</th>
-              <th className="text-[#8E8E8E] text-xs font-medium font-geist py-3 px-4">Available Balance</th>
-              <th className="text-[#8E8E8E] text-xs font-medium font-geist py-3 pl-4 pr-2 text-right"></th>
+              <th className="text-[#8E8E8E] text-xs font-medium font-sans py-3 pr-4 pl-2">Exchange</th>
+              <th className="text-[#8E8E8E] text-xs font-medium font-sans py-3 px-4">Address</th>
+              <th className="text-[#8E8E8E] text-xs font-medium font-sans py-3 px-4">Total Equity</th>
+              <th className="text-[#8E8E8E] text-xs font-medium font-sans py-3 px-4">Available Balance</th>
+              <th className="text-[#8E8E8E] text-xs font-medium font-sans py-3 pl-4 pr-2 text-right"></th>
             </tr>
           </thead>
           <tbody>
@@ -181,7 +181,7 @@ const ExchangeSettingsSection = () => {
               >
                 {/* Exchange Name */}
                 <td className="py-3.5 pr-4 pl-2">
-                  <span className="text-white text-sm font-medium font-geist">{exchange.name}</span>
+                  <span className="text-white text-sm font-medium font-sans">{exchange.name}</span>
                 </td>
 
                 {/* Address */}
@@ -191,14 +191,14 @@ const ExchangeSettingsSection = () => {
 
                 {/* Total Equity */}
                 <td className="py-3.5 px-4">
-                  <span className="text-[#8E8E8E] text-sm font-geist">
+                  <span className="text-[#8E8E8E] text-sm font-sans">
                     {balanceLoading ? '...' : exchange.totalEquity}
                   </span>
                 </td>
 
                 {/* Available Balance */}
                 <td className="py-3.5 px-4">
-                  <span className="text-[#8E8E8E] text-sm font-geist">
+                  <span className="text-[#8E8E8E] text-sm font-sans">
                     {balanceLoading ? '...' : exchange.availableBalance}
                   </span>
                 </td>
@@ -233,14 +233,14 @@ const ExchangeSettingsSection = () => {
             {/* Total Row */}
             <tr>
               <td className="py-3.5 pr-4 pl-2">
-                <span className="text-white text-sm font-semibold font-geist">Total</span>
+                <span className="text-white text-sm font-semibold font-sans">Total</span>
               </td>
               <td className="py-3.5 px-4"></td>
               <td className="py-3.5 px-4">
-                <span className="text-[#8E8E8E] text-sm font-geist">--</span>
+                <span className="text-[#8E8E8E] text-sm font-sans">--</span>
               </td>
               <td className="py-3.5 px-4">
-                <span className="text-[#8E8E8E] text-sm font-geist">--</span>
+                <span className="text-[#8E8E8E] text-sm font-sans">--</span>
               </td>
               <td className="py-3.5 pl-4 pr-2"></td>
             </tr>

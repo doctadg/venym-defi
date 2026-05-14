@@ -15,14 +15,14 @@ const MarketIcon = ({ active }: { active: boolean }) => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M3 17L9 11L13 15L21 7"
-            stroke={active ? '#1e40c6' : '#8E8E8E'}
+            stroke={active ? 'rgba(255,255,255,0.9)' : '#8E8E8E'}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
         />
         <path
             d="M17 7H21V11"
-            stroke={active ? '#1e40c6' : '#8E8E8E'}
+            stroke={active ? 'rgba(255,255,255,0.9)' : '#8E8E8E'}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -32,10 +32,10 @@ const MarketIcon = ({ active }: { active: boolean }) => (
 
 const TradeIcon = ({ active }: { active: boolean }) => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="3" width="7" height="7" rx="1" stroke={active ? '#1e40c6' : '#8E8E8E'} strokeWidth="2" />
-        <rect x="14" y="3" width="7" height="7" rx="1" stroke={active ? '#1e40c6' : '#8E8E8E'} strokeWidth="2" />
-        <rect x="3" y="14" width="7" height="7" rx="1" stroke={active ? '#1e40c6' : '#8E8E8E'} strokeWidth="2" />
-        <rect x="14" y="14" width="7" height="7" rx="1" stroke={active ? '#1e40c6' : '#8E8E8E'} strokeWidth="2" />
+        <rect x="3" y="3" width="7" height="7" rx="1" stroke={active ? 'rgba(255,255,255,0.9)' : '#8E8E8E'} strokeWidth="2" />
+        <rect x="14" y="3" width="7" height="7" rx="1" stroke={active ? 'rgba(255,255,255,0.9)' : '#8E8E8E'} strokeWidth="2" />
+        <rect x="3" y="14" width="7" height="7" rx="1" stroke={active ? 'rgba(255,255,255,0.9)' : '#8E8E8E'} strokeWidth="2" />
+        <rect x="14" y="14" width="7" height="7" rx="1" stroke={active ? 'rgba(255,255,255,0.9)' : '#8E8E8E'} strokeWidth="2" />
     </svg>
 );
 
@@ -43,12 +43,12 @@ const PortfolioIcon = ({ active }: { active: boolean }) => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"
-            stroke={active ? '#1e40c6' : '#8E8E8E'}
+            stroke={active ? 'rgba(255,255,255,0.9)' : '#8E8E8E'}
             strokeWidth="2"
         />
         <path
             d="M12 6V12L16 14"
-            stroke={active ? '#1e40c6' : '#8E8E8E'}
+            stroke={active ? 'rgba(255,255,255,0.9)' : '#8E8E8E'}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -69,11 +69,11 @@ const NavItem = ({
 }) => (
     <button
         onClick={onClick}
-        className={`flex flex-col items-center justify-center gap-1 flex-1 py-2 transition-colors ${active ? 'text-[#1e40c6]' : 'text-[#8E8E8E]'
+        className={`flex flex-col items-center justify-center gap-1 flex-1 py-2 transition-colors ${active ? 'text-[rgba(255,255,255,0.9)]' : 'text-[#8E8E8E]'
             }`}
     >
         {icon}
-        <span className={`text-[10px] font-medium ${active ? 'text-[#1e40c6]' : 'text-[#8E8E8E]'}`}>
+        <span className={`text-[10px] font-medium ${active ? 'text-[rgba(255,255,255,0.9)]' : 'text-[#8E8E8E]'}`}>
             {label}
         </span>
     </button>
@@ -92,11 +92,11 @@ const LinkNavItem = ({
 }) => (
     <Link
         href={href}
-        className={`flex flex-col items-center justify-center gap-1 flex-1 py-2 transition-colors ${active ? 'text-[#1e40c6]' : 'text-[#8E8E8E]'
+        className={`flex flex-col items-center justify-center gap-1 flex-1 py-2 transition-colors ${active ? 'text-[rgba(255,255,255,0.9)]' : 'text-[#8E8E8E]'
             }`}
     >
         {icon}
-        <span className={`text-[10px] font-medium ${active ? 'text-[#1e40c6]' : 'text-[#8E8E8E]'}`}>
+        <span className={`text-[10px] font-medium ${active ? 'text-[rgba(255,255,255,0.9)]' : 'text-[#8E8E8E]'}`}>
             {label}
         </span>
     </Link>
@@ -111,7 +111,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ currentView, onViewChange }) => {
     const isMarketActive = currentView === AppView.POINTS || currentView === AppView.LEADERBOARD;
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 bg-[#14192F] border-t border-white/10 flex items-center justify-around px-4 z-50 md:hidden safe-area-bottom">
+        <nav className="fixed bottom-0 left-0 right-0 bg-[#121212] border-t border-white/10 flex items-center justify-around px-4 z-50 md:hidden safe-area-bottom">
             <NavItem
                 label="Market"
                 icon={<MarketIcon active={isMarketActive} />}
@@ -125,19 +125,30 @@ const MobileNav: React.FC<MobileNavProps> = ({ currentView, onViewChange }) => {
                 href="/"
             />
             <LinkNavItem
+                label="Swap"
+                icon={
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 16V4M7 4L3 8M7 4L11 8" stroke={pathname === '/swap' ? 'rgba(255,255,255,0.9)' : '#8E8E8E'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M17 8V20M17 20L13 16M17 20L21 16" stroke={pathname === '/swap' ? 'rgba(255,255,255,0.9)' : '#8E8E8E'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                }
+                active={pathname === '/swap'}
+                href="/swap"
+            />
+            <LinkNavItem
                 label="Pair Trade"
                 icon={
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M3 16L7 12L11 14L15 8L21 12"
-                            stroke={isPairTradingActive ? '#1e40c6' : '#8E8E8E'}
+                            stroke={isPairTradingActive ? 'rgba(255,255,255,0.9)' : '#8E8E8E'}
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         />
                         <path
                             d="M3 10L7 14L11 10L15 16L21 10"
-                            stroke={isPairTradingActive ? '#1e40c6' : '#8E8E8E'}
+                            stroke={isPairTradingActive ? 'rgba(255,255,255,0.9)' : '#8E8E8E'}
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"

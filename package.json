@@ -13,8 +13,11 @@
     "@dynamic-labs/sdk-react-core": "^4.57.2",
     "@dynamic-labs/solana": "^4.57.2",
     "@farcaster/miniapp-sdk": "^0.2.1",
+    "@lifi/sdk": "^3.16.3",
+    "@lifi/types": "^17.81.1",
     "@solana/spl-token": "^0.4.14",
     "@solana/web3.js": "^1.98.4",
+    "@tanstack/react-query": "^5.100.10",
     "@vercel/og": "^0.8.6",
     "bs58": "^6.0.0",
     "clsx": "^2.1.1",
@@ -32,9 +35,11 @@
     "react-hot-toast": "^2.6.0",
     "react-joyride": "^3.0.0-7",
     "recharts": "^3.5.0",
+    "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
     "tweetnacl": "^1.0.3",
-    "viem": "^2.47.0"
+    "viem": "^2.47.0",
+    "wagmi": "^2.19.5"
   },
   "devDependencies": {
     "@types/node": "^20",

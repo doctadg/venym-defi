@@ -205,10 +205,10 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
         return (
             <div className="flex flex-col h-full bg-bg-panel rounded-lg border border-border overflow-y-auto">
                 <div className="flex items-center justify-between px-4 py-3 border-b border-border">
-                    <span className="text-white font-geist font-semibold text-sm">Pair Trading</span>
+                    <span className="text-white font-sans font-semibold text-sm">Pair Trading</span>
                 </div>
                 <div className="flex-1 flex items-center justify-center px-4">
-                    <span className="text-brand-textGray text-sm font-geist text-center">
+                    <span className="text-brand-textGray text-sm font-sans text-center">
                         Select a pair from the market explorer to start trading
                     </span>
                 </div>
@@ -224,7 +224,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 <div className="relative">
                     <button
                         onClick={() => { setShowExecDropdown(!showExecDropdown); setShowVenueDropdown(false); }}
-                        className="flex items-center gap-1.5 text-white font-geist text-sm font-medium"
+                        className="flex items-center gap-1.5 text-white font-sans text-sm font-medium"
                     >
                         {executionType === 'MARKET' ? 'Market Order' : `${executionType} Order`}
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -237,7 +237,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                                 <button
                                     key={type}
                                     onClick={() => { setExecutionType(type); setShowExecDropdown(false); }}
-                                    className={`w-full px-3 py-2 text-left text-xs font-geist transition-colors hover:bg-white/5 ${executionType === type ? 'text-[#1e40c6]' : 'text-white'}`}
+                                    className={`w-full px-3 py-2 text-left text-xs font-sans transition-colors hover:bg-white/5 ${executionType === type ? 'text-[rgba(255,255,255,0.9)]' : 'text-white'}`}
                                 >
                                     {type === 'MARKET' ? 'Market Order' : `${type} Order`}
                                 </button>
@@ -250,7 +250,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 <div className="relative">
                     <button
                         onClick={() => { setShowVenueDropdown(!showVenueDropdown); setShowExecDropdown(false); }}
-                        className="flex items-center gap-1.5 px-3 py-1 bg-[#1e40c6]/10 text-[#1e40c6] text-[11px] font-geist font-medium rounded-full border border-[#1e40c6]/20"
+                        className="flex items-center gap-1.5 px-3 py-1 bg-[rgba(255,255,255,0.9)]/10 text-[rgba(255,255,255,0.9)] text-[11px] font-sans font-medium rounded-full border border-[rgba(255,255,255,0.9)]/20"
                     >
                         {venue === 'hyperliquid' ? 'Hyperliquid' : 'Lighter'}
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -261,13 +261,13 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                         <div className="absolute top-full right-0 mt-1 bg-bg-panel border border-border rounded-lg shadow-xl z-50 min-w-[140px]">
                             <button
                                 onClick={() => { setVenue('hyperliquid'); setShowVenueDropdown(false); }}
-                                className={`w-full px-3 py-2 text-left text-xs font-geist transition-colors hover:bg-white/5 ${venue === 'hyperliquid' ? 'text-[#1e40c6]' : 'text-white'}`}
+                                className={`w-full px-3 py-2 text-left text-xs font-sans transition-colors hover:bg-white/5 ${venue === 'hyperliquid' ? 'text-[rgba(255,255,255,0.9)]' : 'text-white'}`}
                             >
                                 Hyperliquid
                             </button>
                             <button
                                 onClick={() => { setVenue('lighter'); setShowVenueDropdown(false); }}
-                                className={`w-full px-3 py-2 text-left text-xs font-geist transition-colors hover:bg-white/5 ${venue === 'lighter' ? 'text-[#1e40c6]' : 'text-white'}`}
+                                className={`w-full px-3 py-2 text-left text-xs font-sans transition-colors hover:bg-white/5 ${venue === 'lighter' ? 'text-[rgba(255,255,255,0.9)]' : 'text-white'}`}
                             >
                                 Lighter
                             </button>
@@ -279,22 +279,22 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
             <div className="flex-1 flex flex-col gap-3 px-4 py-3">
                 {/* Overall Weight Display */}
                 <div className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.03] border border-border">
-                    <span className="text-brand-textGray text-[11px] font-geist">Overall:</span>
+                    <span className="text-brand-textGray text-[11px] font-sans">Overall:</span>
                     <div className="flex items-center gap-2">
-                        <span className="text-brand-green text-xs font-geist font-bold">{longPct}%</span>
+                        <span className="text-brand-green text-xs font-sans font-bold">{longPct}%</span>
                         <span className="text-brand-textGray text-[10px]">/</span>
-                        <span className="text-brand-red text-xs font-geist font-bold">{shortPct}%</span>
-                        <span className="text-[#1e40c6] text-[10px] font-geist ml-2 cursor-pointer hover:underline">Rebalance Weight</span>
+                        <span className="text-brand-red text-xs font-sans font-bold">{shortPct}%</span>
+                        <span className="text-[rgba(255,255,255,0.9)] text-[10px] font-sans ml-2 cursor-pointer hover:underline">Rebalance Weight</span>
                     </div>
                 </div>
 
                 {/* Long Assets */}
                 <div>
                     <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-brand-green text-[10px] font-geist font-semibold uppercase tracking-wider">
+                        <span className="text-brand-green text-[10px] font-sans font-semibold uppercase tracking-wider">
                             Long Assets ({market.longAssets.length})
                         </span>
-                        <span className="text-brand-textGray text-[10px] font-geist cursor-pointer hover:text-white">+</span>
+                        <span className="text-brand-textGray text-[10px] font-sans cursor-pointer hover:text-white">+</span>
                     </div>
                     <div className="flex flex-col gap-1.5">
                         {market.longAssets.map((asset, i) => {
@@ -312,12 +312,12 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                                             />
                                         </div>
                                         <div className="flex flex-col">
-                                            <span className="text-white text-xs font-geist font-medium">{asset.asset}</span>
-                                            <span className="text-brand-textGray text-[9px] font-geist">1x</span>
+                                            <span className="text-white text-xs font-sans font-medium">{asset.asset}</span>
+                                            <span className="text-brand-textGray text-[9px] font-sans">1x</span>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-brand-green text-xs font-geist font-semibold">{w}%</span>
+                                        <span className="text-brand-green text-xs font-sans font-semibold">{w}%</span>
                                         <span className="text-brand-textGray text-[10px] cursor-pointer hover:text-white">×</span>
                                     </div>
                                 </div>
@@ -338,10 +338,10 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 {/* Short Assets */}
                 <div>
                     <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-brand-red text-[10px] font-geist font-semibold uppercase tracking-wider">
+                        <span className="text-brand-red text-[10px] font-sans font-semibold uppercase tracking-wider">
                             Short Assets ({market.shortAssets.length})
                         </span>
-                        <span className="text-brand-textGray text-[10px] font-geist cursor-pointer hover:text-white">+</span>
+                        <span className="text-brand-textGray text-[10px] font-sans cursor-pointer hover:text-white">+</span>
                     </div>
                     <div className="flex flex-col gap-1.5">
                         {market.shortAssets.map((asset, i) => {
@@ -359,12 +359,12 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                                             />
                                         </div>
                                         <div className="flex flex-col">
-                                            <span className="text-white text-xs font-geist font-medium">{asset.asset}</span>
-                                            <span className="text-brand-textGray text-[9px] font-geist">1x</span>
+                                            <span className="text-white text-xs font-sans font-medium">{asset.asset}</span>
+                                            <span className="text-brand-textGray text-[9px] font-sans">1x</span>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-brand-red text-xs font-geist font-semibold">{w}%</span>
+                                        <span className="text-brand-red text-xs font-sans font-semibold">{w}%</span>
                                         <span className="text-brand-textGray text-[10px] cursor-pointer hover:text-white">×</span>
                                     </div>
                                 </div>
@@ -379,13 +379,13 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                         <div className="flex gap-1 mb-1">
                             <button
                                 onClick={() => setTriggerDirection('above')}
-                                className={`flex-1 py-1 text-[10px] font-geist rounded ${triggerDirection === 'above' ? 'bg-brand-green/20 text-brand-green' : 'bg-bg-input text-brand-textGray'}`}
+                                className={`flex-1 py-1 text-[10px] font-sans rounded ${triggerDirection === 'above' ? 'bg-brand-green/20 text-brand-green' : 'bg-bg-input text-brand-textGray'}`}
                             >
                                 Above
                             </button>
                             <button
                                 onClick={() => setTriggerDirection('below')}
-                                className={`flex-1 py-1 text-[10px] font-geist rounded ${triggerDirection === 'below' ? 'bg-brand-red/20 text-brand-red' : 'bg-bg-input text-brand-textGray'}`}
+                                className={`flex-1 py-1 text-[10px] font-sans rounded ${triggerDirection === 'below' ? 'bg-brand-red/20 text-brand-red' : 'bg-bg-input text-brand-textGray'}`}
                             >
                                 Below
                             </button>
@@ -395,7 +395,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                             value={triggerValue}
                             onChange={(e) => setTriggerValue(e.target.value)}
                             placeholder={`Trigger ratio (current: ${Number(market.ratio).toFixed(4)})`}
-                            className="w-full px-3 py-1.5 bg-bg-input border border-border rounded-md text-sm text-white placeholder:text-brand-textGray font-geist focus:outline-none focus:border-[#1e40c6]"
+                            className="w-full px-3 py-1.5 bg-bg-input border border-border rounded-md text-sm text-white placeholder:text-brand-textGray font-sans focus:outline-none focus:border-[rgba(255,255,255,0.9)]"
                         />
                     </div>
                 )}
@@ -404,21 +404,21 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 {executionType === 'TWAP' && (
                     <div className="grid grid-cols-2 gap-2">
                         <div>
-                            <label className="text-brand-textGray text-[10px] font-geist block mb-1">Chunks</label>
+                            <label className="text-brand-textGray text-[10px] font-sans block mb-1">Chunks</label>
                             <input
                                 type="number"
                                 value={twapChunks}
                                 onChange={(e) => setTwapChunks(e.target.value)}
-                                className="w-full px-2 py-1.5 bg-bg-input border border-border rounded-md text-sm text-white font-geist focus:outline-none focus:border-[#1e40c6]"
+                                className="w-full px-2 py-1.5 bg-bg-input border border-border rounded-md text-sm text-white font-sans focus:outline-none focus:border-[rgba(255,255,255,0.9)]"
                             />
                         </div>
                         <div>
-                            <label className="text-brand-textGray text-[10px] font-geist block mb-1">Interval (s)</label>
+                            <label className="text-brand-textGray text-[10px] font-sans block mb-1">Interval (s)</label>
                             <input
                                 type="number"
                                 value={twapInterval}
                                 onChange={(e) => setTwapInterval(e.target.value)}
-                                className="w-full px-2 py-1.5 bg-bg-input border border-border rounded-md text-sm text-white font-geist focus:outline-none focus:border-[#1e40c6]"
+                                className="w-full px-2 py-1.5 bg-bg-input border border-border rounded-md text-sm text-white font-sans focus:outline-none focus:border-[rgba(255,255,255,0.9)]"
                             />
                         </div>
                     </div>
@@ -426,16 +426,16 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
 
                 {/* Size */}
                 <div>
-                    <label className="text-brand-textGray text-[10px] font-geist uppercase tracking-wider block mb-1">Size</label>
+                    <label className="text-brand-textGray text-[10px] font-sans uppercase tracking-wider block mb-1">Size</label>
                     <div className="relative">
                         <input
                             type="number"
                             value={usdValue}
                             onChange={(e) => { setUsdValue(e.target.value); setLocalError(null); }}
                             placeholder="0 USD"
-                            className="w-full px-3 py-2.5 bg-bg-input border border-border rounded-lg text-white font-geist focus:outline-none focus:border-[#1e40c6] pr-14"
+                            className="w-full px-3 py-2.5 bg-bg-input border border-border rounded-lg text-white font-sans focus:outline-none focus:border-[rgba(255,255,255,0.9)] pr-14"
                         />
-                        <button className="absolute right-2 top-1/2 -translate-y-1/2 px-2 py-0.5 bg-[#1e40c6] text-white text-[10px] font-geist font-medium rounded">
+                        <button className="absolute right-2 top-1/2 -translate-y-1/2 px-2 py-0.5 bg-[rgba(255,255,255,0.9)] text-white text-[10px] font-sans font-medium rounded">
                             Max
                         </button>
                     </div>
@@ -444,7 +444,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 {/* Available Margin */}
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <span className="text-brand-textGray text-[11px] font-geist">
+                        <span className="text-brand-textGray text-[11px] font-sans">
                             Available Margin
                             <span className="text-brand-textGray/50 ml-1">({venue === 'lighter' ? 'Lighter' : 'Hyperliquid'})</span>
                         </span>
@@ -452,7 +452,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                             <circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />
                         </svg>
                     </div>
-                    <span className="text-white text-xs font-geist font-medium">
+                    <span className="text-white text-xs font-sans font-medium">
                         {balanceLoading ? 'Loading...' : `$${availableMargin}`}
                     </span>
                 </div>
@@ -460,8 +460,8 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 {/* Leverage */}
                 <div>
                     <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-brand-textGray text-[10px] font-geist uppercase tracking-wider">Leverage</span>
-                        <span className="text-white text-xs font-geist font-medium">{leverage}x</span>
+                        <span className="text-brand-textGray text-[10px] font-sans uppercase tracking-wider">Leverage</span>
+                        <span className="text-white text-xs font-sans font-medium">{leverage}x</span>
                     </div>
                     <input
                         type="range"
@@ -469,14 +469,14 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                         max={leverageConfig.maxLeverage}
                         value={leverage}
                         onChange={(e) => setLeverage(Number(e.target.value))}
-                        className="w-full accent-[#1e40c6] h-1"
+                        className="w-full accent-[rgba(255,255,255,0.9)] h-1"
                     />
                     <div className="flex justify-between mt-1">
                         {leveragePresets.map((lev) => (
                             <button
                                 key={lev}
                                 onClick={() => setLeverage(lev)}
-                                className={`text-[10px] font-geist transition-colors ${leverage === lev ? 'text-[#1e40c6] font-bold' : 'text-brand-textGray hover:text-white'}`}
+                                className={`text-[10px] font-sans transition-colors ${leverage === lev ? 'text-[rgba(255,255,255,0.9)] font-bold' : 'text-brand-textGray hover:text-white'}`}
                             >
                                 {lev}x
                             </button>
@@ -487,14 +487,14 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 {/* TP/SL Toggle */}
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <span className="text-brand-textGray text-[11px] font-geist">Take Profit / Stop Loss</span>
+                        <span className="text-brand-textGray text-[11px] font-sans">Take Profit / Stop Loss</span>
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8E8E8E" strokeWidth="2" className="opacity-50">
                             <circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />
                         </svg>
                     </div>
                     <button
                         onClick={() => setTpSlEnabled(!tpSlEnabled)}
-                        className={`w-8 h-4 rounded-full transition-colors relative ${tpSlEnabled ? 'bg-[#1e40c6]' : 'bg-border'}`}
+                        className={`w-8 h-4 rounded-full transition-colors relative ${tpSlEnabled ? 'bg-[rgba(255,255,255,0.9)]' : 'bg-border'}`}
                     >
                         <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white transition-transform ${tpSlEnabled ? 'translate-x-4' : 'translate-x-0.5'}`} />
                     </button>
@@ -503,14 +503,14 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 {tpSlEnabled && (
                     <div className="grid grid-cols-2 gap-2">
                         <div>
-                            <label className="text-brand-green text-[9px] font-geist block mb-0.5">TP %</label>
+                            <label className="text-brand-green text-[9px] font-sans block mb-0.5">TP %</label>
                             <input type="number" value={tpValue} onChange={(e) => setTpValue(e.target.value)} placeholder="e.g. 5"
-                                className="w-full px-2 py-1 bg-bg-input border border-border rounded text-xs text-white font-geist focus:outline-none focus:border-brand-green" />
+                                className="w-full px-2 py-1 bg-bg-input border border-border rounded text-xs text-white font-sans focus:outline-none focus:border-brand-green" />
                         </div>
                         <div>
-                            <label className="text-brand-red text-[9px] font-geist block mb-0.5">SL %</label>
+                            <label className="text-brand-red text-[9px] font-sans block mb-0.5">SL %</label>
                             <input type="number" value={slValue} onChange={(e) => setSlValue(e.target.value)} placeholder="e.g. 3"
-                                className="w-full px-2 py-1 bg-bg-input border border-border rounded text-xs text-white font-geist focus:outline-none focus:border-brand-red" />
+                                className="w-full px-2 py-1 bg-bg-input border border-border rounded text-xs text-white font-sans focus:outline-none focus:border-brand-red" />
                         </div>
                     </div>
                 )}
@@ -518,58 +518,58 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 {/* Order Details */}
                 <div className="flex flex-col gap-1.5 pt-1 border-t border-border">
                     <div className="flex items-center justify-between">
-                        <span className="text-brand-textGray text-[11px] font-geist">Slippage</span>
-                        <span className="text-[#1e40c6] text-[11px] font-geist font-medium">Max: {slippage}%</span>
+                        <span className="text-brand-textGray text-[11px] font-sans">Slippage</span>
+                        <span className="text-[rgba(255,255,255,0.9)] text-[11px] font-sans font-medium">Max: {slippage}%</span>
                     </div>
                     <div className="flex items-center justify-between">
-                        <span className="text-brand-textGray text-[11px] font-geist">Order Value</span>
-                        <span className="text-white text-[11px] font-geist">${orderValue.toFixed(2)}</span>
+                        <span className="text-brand-textGray text-[11px] font-sans">Order Value</span>
+                        <span className="text-white text-[11px] font-sans">${orderValue.toFixed(2)}</span>
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1">
-                            <span className="text-brand-textGray text-[11px] font-geist">Min Size Req</span>
+                            <span className="text-brand-textGray text-[11px] font-sans">Min Size Req</span>
                             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8E8E8E" strokeWidth="2" className="opacity-50">
                                 <circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />
                             </svg>
                         </div>
-                        <span className="text-white text-[11px] font-geist">$22</span>
+                        <span className="text-white text-[11px] font-sans">$22</span>
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1">
-                            <span className="text-brand-textGray text-[11px] font-geist">Margin Required</span>
+                            <span className="text-brand-textGray text-[11px] font-sans">Margin Required</span>
                             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8E8E8E" strokeWidth="2" className="opacity-50">
                                 <circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />
                             </svg>
                         </div>
-                        <span className="text-white text-[11px] font-geist">${marginRequired.toFixed(2)}</span>
+                        <span className="text-white text-[11px] font-sans">${marginRequired.toFixed(2)}</span>
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1">
-                            <span className="text-brand-textGray text-[11px] font-geist">Fees</span>
+                            <span className="text-brand-textGray text-[11px] font-sans">Fees</span>
                             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8E8E8E" strokeWidth="2" className="opacity-50">
                                 <circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />
                             </svg>
                         </div>
-                        <span className="text-white text-[11px] font-geist">{(0.06).toFixed(2)}%</span>
+                        <span className="text-white text-[11px] font-sans">{(0.06).toFixed(2)}%</span>
                     </div>
                 </div>
 
                 {/* Error */}
                 {error && (
                     <div className="px-3 py-2 bg-brand-red/10 border border-brand-red/20 rounded-md">
-                        <span className="text-brand-red text-[11px] font-geist">{error}</span>
+                        <span className="text-brand-red text-[11px] font-sans">{error}</span>
                     </div>
                 )}
 
                 {/* Lighter compat warning */}
                 {compatLoading && (
-                    <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10 text-brand-textGray text-xs font-geist">
+                    <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10 text-brand-textGray text-xs font-sans">
                         <div className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                         Checking asset availability...
                     </div>
                 )}
                 {lighterIncompatible && (
-                    <div className="p-2.5 rounded-lg bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-geist">
+                    <div className="p-2.5 rounded-lg bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-sans">
                         <span className="font-medium">Not available on Lighter:</span>{' '}
                         {lighterCompat?.missingLegs.join(', ')}
                         <p className="mt-1 text-brand-textGray text-[10px]">
@@ -580,7 +580,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
 
                 {/* Submit Button */}
                 {!isConnected ? (
-                    <button className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-geist font-medium text-sm rounded-lg transition-colors shadow-[0_0_15px_rgba(34,197,94,0.2)]">
+                    <button className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-sans font-medium text-sm rounded-lg transition-colors shadow-[0_0_15px_rgba(34,197,94,0.2)]">
                         Connect Wallet
                     </button>
                 ) : venue === 'hyperliquid' ? (
@@ -588,7 +588,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                         <button
                             onClick={onEnableTrading}
                             disabled={isBusy}
-                            className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-geist font-medium text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.2)]"
+                            className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-sans font-medium text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.2)]"
                         >
                             {isBusy ? (
                                 <span className="flex items-center justify-center gap-2">
@@ -603,7 +603,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                         <button
                             onClick={() => setShowConfirm(true)}
                             disabled={isSubmitting || !usdValue || lighterIncompatible}
-                            className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-geist font-medium text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.2)]"
+                            className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-sans font-medium text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.2)]"
                         >
                             {isSubmitting ? (
                                 <span className="flex items-center justify-center gap-2">
@@ -621,7 +621,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                             <button
                                 onClick={() => onEnableLighter ? onEnableLighter() : setShowLighterImport(true)}
                                 disabled={isBusy}
-                                className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-geist font-medium text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.2)]"
+                                className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-sans font-medium text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.2)]"
                             >
                                 {isBusy ? (
                                     <span className="flex items-center justify-center gap-2">
@@ -642,7 +642,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                         <button
                             onClick={() => setShowConfirm(true)}
                             disabled={isSubmitting || !usdValue || lighterIncompatible || compatLoading}
-                            className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-geist font-medium text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.2)]"
+                            className="w-full py-3 bg-brand-green hover:bg-brand-green/90 text-white font-sans font-medium text-sm rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_15px_rgba(34,197,94,0.2)]"
                         >
                             {isSubmitting ? (
                                 <span className="flex items-center justify-center gap-2">
@@ -660,7 +660,7 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
 
                 {/* Account Overview */}
                 <div className="border-t border-border pt-3 mt-1">
-                    <h4 className="text-white font-geist font-semibold text-xs mb-2">Account Overview</h4>
+                    <h4 className="text-white font-sans font-semibold text-xs mb-2">Account Overview</h4>
                     <div className="flex flex-col gap-1.5">
                         {[
                             { label: 'Unrealized PNL', value: '$0' },
@@ -671,14 +671,14 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                         ].map((item) => (
                             <div key={item.label} className="flex items-center justify-between">
                                 <div className="flex items-center gap-1">
-                                    <span className="text-brand-textGray text-[11px] font-geist">{item.label}</span>
+                                    <span className="text-brand-textGray text-[11px] font-sans">{item.label}</span>
                                     {item.hasInfo && (
                                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8E8E8E" strokeWidth="2" className="opacity-50">
                                             <circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" />
                                         </svg>
                                     )}
                                 </div>
-                                <span className="text-white text-[11px] font-geist">{item.value}</span>
+                                <span className="text-white text-[11px] font-sans">{item.value}</span>
                             </div>
                         ))}
                     </div>
@@ -687,14 +687,14 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                 {/* Margin Used */}
                 <div className="border-t border-border pt-3">
                     <div className="flex items-center justify-between mb-2">
-                        <span className="text-white text-xs font-geist font-semibold">Margin Used</span>
-                        <span className="text-white text-xs font-geist">$0</span>
+                        <span className="text-white text-xs font-sans font-semibold">Margin Used</span>
+                        <span className="text-white text-xs font-sans">$0</span>
                     </div>
                     <div className="flex items-center justify-between mb-2">
-                        <span className="text-brand-textGray text-[11px] font-geist">
+                        <span className="text-brand-textGray text-[11px] font-sans">
                             Available Margin ({venue === 'lighter' ? 'Lighter' : 'Hyperliquid'})
                         </span>
-                        <span className="text-white text-[11px] font-geist font-medium">
+                        <span className="text-white text-[11px] font-sans font-medium">
                             {balanceLoading ? '...' : `$${availableMargin}`}
                         </span>
                     </div>
@@ -707,9 +707,9 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                             <div key={item.token} className="flex items-center justify-between py-0.5">
                                 <div className="flex items-center gap-2">
                                     <img src={item.logo} alt={item.token} className="w-4 h-4 rounded-full" />
-                                    <span className="text-white text-[11px] font-geist">{item.token}</span>
+                                    <span className="text-white text-[11px] font-sans">{item.token}</span>
                                 </div>
-                                <span className="text-brand-textGray text-[11px] font-geist">0.00</span>
+                                <span className="text-brand-textGray text-[11px] font-sans">0.00</span>
                             </div>
                         ))}
                     </div>
@@ -717,10 +717,10 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
 
                 {/* Deposit / Withdraw */}
                 <div className="flex gap-2 pt-2 border-t border-border">
-                    <button className="flex-1 py-2 bg-white/5 border border-border text-white text-xs font-geist rounded-lg hover:bg-white/10 transition-colors">
+                    <button className="flex-1 py-2 bg-white/5 border border-border text-white text-xs font-sans rounded-lg hover:bg-white/10 transition-colors">
                         Deposit
                     </button>
-                    <button className="flex-1 py-2 bg-white/5 border border-border text-white text-xs font-geist rounded-lg hover:bg-white/10 transition-colors">
+                    <button className="flex-1 py-2 bg-white/5 border border-border text-white text-xs font-sans rounded-lg hover:bg-white/10 transition-colors">
                         Withdraw
                     </button>
                 </div>
@@ -730,36 +730,36 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
             {showConfirm && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
                     <div className="bg-bg-panel border border-border rounded-xl p-5 max-w-sm w-full mx-4 shadow-2xl">
-                        <h3 className="text-white font-geist font-semibold text-sm mb-3">Confirm Pair Trade</h3>
+                        <h3 className="text-white font-sans font-semibold text-sm mb-3">Confirm Pair Trade</h3>
                         <div className="space-y-2 mb-4">
-                            <div className="flex justify-between text-xs font-geist">
+                            <div className="flex justify-between text-xs font-sans">
                                 <span className="text-brand-textGray">Pair</span>
                                 <span className="text-white">{market.longAssets.map(a => a.asset).join('+')} / {market.shortAssets.map(a => a.asset).join('+')}</span>
                             </div>
-                            <div className="flex justify-between text-xs font-geist">
+                            <div className="flex justify-between text-xs font-sans">
                                 <span className="text-brand-textGray">Venue</span>
                                 <span className="text-white">{venue === 'hyperliquid' ? 'Hyperliquid' : 'Lighter'}</span>
                             </div>
-                            <div className="flex justify-between text-xs font-geist">
+                            <div className="flex justify-between text-xs font-sans">
                                 <span className="text-brand-textGray">Type</span>
                                 <span className="text-white">{executionType}</span>
                             </div>
-                            <div className="flex justify-between text-xs font-geist">
+                            <div className="flex justify-between text-xs font-sans">
                                 <span className="text-brand-textGray">Size</span>
                                 <span className="text-white">${usdValue}</span>
                             </div>
-                            <div className="flex justify-between text-xs font-geist">
+                            <div className="flex justify-between text-xs font-sans">
                                 <span className="text-brand-textGray">Leverage</span>
                                 <span className="text-white">{leverage}x</span>
                             </div>
-                            <div className="flex justify-between text-xs font-geist">
+                            <div className="flex justify-between text-xs font-sans">
                                 <span className="text-brand-textGray">Slippage</span>
                                 <span className="text-white">{slippage}%</span>
                             </div>
                         </div>
                         {venue === 'lighter' && (
                             <div className="px-3 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-md mb-3">
-                                <span className="text-yellow-500 text-[10px] font-geist">
+                                <span className="text-yellow-500 text-[10px] font-sans">
                                     This trade will be decomposed into individual perp legs on Lighter.
                                 </span>
                             </div>
@@ -767,13 +767,13 @@ const PairOrderPanel: React.FC<PairOrderPanelProps> = ({
                         <div className="flex gap-2">
                             <button
                                 onClick={() => setShowConfirm(false)}
-                                className="flex-1 py-2 bg-bg-input border border-border text-brand-textGray text-xs font-geist rounded-lg hover:text-white transition-colors"
+                                className="flex-1 py-2 bg-bg-input border border-border text-brand-textGray text-xs font-sans rounded-lg hover:text-white transition-colors"
                             >
                                 Cancel
                             </button>
                             <button
                                 onClick={() => { setShowConfirm(false); handleSubmit(); }}
-                                className="flex-1 py-2 bg-brand-green text-white text-xs font-geist rounded-lg hover:bg-brand-green/80 transition-colors shadow-[0_0_10px_rgba(34,197,94,0.2)]"
+                                className="flex-1 py-2 bg-brand-green text-white text-xs font-sans rounded-lg hover:bg-brand-green/80 transition-colors shadow-[0_0_10px_rgba(34,197,94,0.2)]"
                             >
                                 Confirm Trade
                             </button>

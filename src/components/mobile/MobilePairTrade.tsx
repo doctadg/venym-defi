@@ -89,13 +89,13 @@ const MobilePairTrade: React.FC = () => {
             {/* Selected Pair Header */}
             {selectedMarket && (
                 <div className="flex items-center gap-3 px-4 py-2 bg-bg-panel border-b border-border">
-                    <span className="text-white font-geist font-semibold text-sm">
+                    <span className="text-white font-sans font-semibold text-sm">
                         {selectedMarket.longAssets.map(a => a.asset).join('+')} / {selectedMarket.shortAssets.map(a => a.asset).join('+')}
                     </span>
-                    <span className="text-brand-textGray text-xs font-geist">
+                    <span className="text-brand-textGray text-xs font-sans">
                         {selectedMarket.ratio.toFixed(4)}
                     </span>
-                    <span className={`text-xs font-geist ml-auto ${selectedMarket.change24h >= 0 ? 'text-brand-green' : 'text-brand-red'
+                    <span className={`text-xs font-sans ml-auto ${selectedMarket.change24h >= 0 ? 'text-brand-green' : 'text-brand-red'
                         }`}>
                         {selectedMarket.change24h >= 0 ? '+' : ''}{selectedMarket.change24h.toFixed(2)}%
                     </span>
@@ -108,7 +108,7 @@ const MobilePairTrade: React.FC = () => {
                     <button
                         key={tab.key}
                         onClick={() => setActiveTab(tab.key)}
-                        className={`flex-1 py-3 text-xs font-geist font-medium text-center transition-colors relative ${activeTab === tab.key ? 'text-[#1e40c6]' : 'text-brand-textGray'
+                        className={`flex-1 py-3 text-xs font-sans font-medium text-center transition-colors relative ${activeTab === tab.key ? 'text-[rgba(255,255,255,0.9)]' : 'text-brand-textGray'
                             }`}
                     >
                         {tab.label}
@@ -116,7 +116,7 @@ const MobilePairTrade: React.FC = () => {
                             <span className="ml-1 text-[10px] opacity-60">({tab.count})</span>
                         )}
                         {activeTab === tab.key && (
-                            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#1e40c6]" />
+                            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[rgba(255,255,255,0.9)]" />
                         )}
                     </button>
                 ))}
@@ -132,16 +132,16 @@ const MobilePairTrade: React.FC = () => {
                             value={searchQuery}
                             onChange={(e) => handleSearch(e.target.value)}
                             placeholder="Search pairs..."
-                            className="w-full px-3 py-2 bg-bg-input border border-border rounded-md text-sm text-white placeholder:text-brand-textGray font-geist focus:outline-none focus:border-[#1e40c6]"
+                            className="w-full px-3 py-2 bg-bg-input border border-border rounded-md text-sm text-white placeholder:text-brand-textGray font-sans focus:outline-none focus:border-[rgba(255,255,255,0.9)]"
                         />
 
                         {/* Market List */}
                         {marketsLoading ? (
                             <div className="flex items-center justify-center py-12">
-                                <div className="w-6 h-6 border-2 border-[#1e40c6]/30 border-t-[#1e40c6] rounded-full animate-spin" />
+                                <div className="w-6 h-6 border-2 border-[rgba(255,255,255,0.9)]/30 border-t-[rgba(255,255,255,0.9)] rounded-full animate-spin" />
                             </div>
                         ) : displayMarkets.length === 0 ? (
-                            <div className="text-center py-12 text-brand-textGray text-xs font-geist">
+                            <div className="text-center py-12 text-brand-textGray text-xs font-sans">
                                 No pairs found
                             </div>
                         ) : (
@@ -156,23 +156,23 @@ const MobilePairTrade: React.FC = () => {
                                         key={market.id}
                                         onClick={() => handleSelectPair(market)}
                                         className={`w-full flex items-center justify-between px-3 py-3 rounded-lg transition-colors ${isSelected
-                                            ? 'bg-[#1e40c6]/10 border border-[#1e40c6]/30'
+                                            ? 'bg-[rgba(255,255,255,0.9)]/10 border border-[rgba(255,255,255,0.9)]/30'
                                             : 'bg-bg-panel border border-border hover:bg-white/[0.03]'
                                             }`}
                                     >
                                         <div className="flex flex-col items-start">
-                                            <span className="text-white font-geist text-sm font-medium">
+                                            <span className="text-white font-sans text-sm font-medium">
                                                 {longLabel} / {shortLabel}
                                             </span>
-                                            <span className="text-brand-textGray text-[11px] font-geist">
+                                            <span className="text-brand-textGray text-[11px] font-sans">
                                                 Ratio: {market.ratio.toFixed(4)}
                                             </span>
                                         </div>
                                         <div className="flex flex-col items-end">
-                                            <span className={`text-sm font-geist font-medium ${isPositive ? 'text-brand-green' : 'text-brand-red'}`}>
+                                            <span className={`text-sm font-sans font-medium ${isPositive ? 'text-brand-green' : 'text-brand-red'}`}>
                                                 {isPositive ? '+' : ''}{market.change24h.toFixed(2)}%
                                             </span>
-                                            <span className="text-brand-textGray text-[11px] font-geist">
+                                            <span className="text-brand-textGray text-[11px] font-sans">
                                                 Vol: ${formatCompact(market.volume24h)}
                                             </span>
                                         </div>

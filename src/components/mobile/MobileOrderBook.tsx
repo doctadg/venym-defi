@@ -54,7 +54,7 @@ const MobileOrderBook: React.FC<MobileOrderBookProps> = ({
     const spreadPercent = bestAsk > 0 ? ((bestAsk - bestBid) / bestAsk * 100) : 0;
 
     return (
-        <div className="flex flex-col h-full bg-[#14192F] rounded-xl p-3">
+        <div className="flex flex-col h-full bg-[#121212] rounded-xl p-3">
             {/* Header */}
             <div className="flex justify-between items-center mb-2">
                 <span className="text-[#8E8E8E] text-xs font-medium">Order Book</span>
@@ -82,7 +82,7 @@ const MobileOrderBook: React.FC<MobileOrderBookProps> = ({
                         className="flex justify-between items-center py-0.5 px-1 text-[11px]"
                     >
                         <span className="text-brand-red">{ask.price}</span>
-                        <span className="text-[#BBBBBB]">{ask.total}</span>
+                        <span className="text-[#8E8E8E]">{ask.total}</span>
                     </div>
                 ))}
             </div>
@@ -105,7 +105,7 @@ const MobileOrderBook: React.FC<MobileOrderBookProps> = ({
                         className="flex justify-between items-center py-0.5 px-1 text-[11px]"
                     >
                         <span className="text-brand-green">{bid.price}</span>
-                        <span className="text-[#BBBBBB]">{bid.total}</span>
+                        <span className="text-[#8E8E8E]">{bid.total}</span>
                     </div>
                 ))}
             </div>

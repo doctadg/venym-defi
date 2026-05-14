@@ -26,7 +26,7 @@ export const AuthCard = ({
       animate={animate}
       exit={exit}
       className={cn(
-        'relative z-10 w-full max-w-[400px] font-replica  h-[390px]',
+        'relative z-10 w-full max-w-[400px] font-sans  h-[390px]',
         className
       )}
     >
