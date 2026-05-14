@@ -1,0 +1,213 @@
+/* TradingView Custom Theme - Override blue colors with brand colors */
+
+/* Active buttons and selected states */
+.tv-button--active,
+.tv-button--checked,
+.tv-control-select__wrap--active {
+  background-color: #1e40c6 !important;
+}
+
+/* Button hover states */
+.tv-button:hover,
+.tv-control-select__wrap:hover {
+  background-color: rgba(30, 64, 198, 0.1) !important;
+}
+
+/* Primary accent color (replaces blue) */
+:root {
+  --tv-color-platform-background: #1a1f3a !important;
+  --tv-color-pane-background: #1a1f3a !important;
+  --tv-color-toolbar-button-background-active: #1e40c6 !important;
+  --tv-color-toolbar-button-background-hover: rgba(30, 64, 198, 0.1) !important;
+  --tv-color-item-active-background: #1e40c6 !important;
+  --tv-color-popup-background: #1e2544 !important;
+}
+
+/* Dialog and menu backgrounds */
+.tv-dialog,
+.tv-dropdown-behavior__body,
+.tv-menu__item {
+  background-color: #1e2544 !important;
+}
+
+/* Menu item hover */
+.tv-menu__item:hover {
+  background-color: rgba(30, 64, 198, 0.1) !important;
+}
+
+/* Checkmark color */
+.tv-control-checkbox__box--checked,
+.tv-radio--checked {
+  background-color: #1e40c6 !important;
+  border-color: #1e40c6 !important;
+}
+
+/* Selected menu item */
+.tv-menu__item--active {
+  background-color: rgba(30, 64, 198, 0.15) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar-thumb {
+  background-color: #1e40c6 !important;
+}
+
+/* Links and accents */
+a,
+.tv-link {
+  color: #1e40c6 !important;
+}
+
+/* Tab active state */
+.tv-tabs__tab--active {
+  border-bottom-color: #1e40c6 !important;
+  color: #1e40c6 !important;
+}
+
+/* Input focus */
+input:focus,
+textarea:focus,
+.tv-control-input__input:focus {
+  border-color: #1e40c6 !important;
+}
+
+/* Remove blue from scale settings buttons (A and L buttons) */
+.tv-chart-pane__chart-price-axis-left-controls button[aria-checked='true'],
+.tv-chart-pane__chart-price-axis-right-controls button[aria-checked='true'] {
+  background-color: #1e40c6 !important;
+}
+
+/* Hide symbol selector/search in TradingView header widget, keep everything else */
+.tv-header__symbol,
+.tv-header__symbol-name,
+.tv-header__symbol-name-text,
+.tv-header__symbol-name-wrapper,
+.tv-header__symbol-select,
+.tv-header__symbol-search,
+.tv-control-select[data-name="symbol"],
+.tv-header__symbol-control,
+.tv-header__symbol-dropdown,
+.tv-header__symbol-button,
+.tv-header__symbol-input,
+/* More specific selectors for symbol selector */
+div[data-name="symbol"],
+.tv-header__left .tv-control-select:first-child,
+.tv-header__left > .tv-control-select,
+/* Hide symbol search icon and input */
+.tv-header__symbol-search-icon,
+.tv-header__symbol-search-input {
+  display: none !important;
+}
+
+/* Hide symbol in chart legend overlay */
+.tv-chart-pane__legend-title,
+.tv-chart-pane__legend-title-text {
+  display: none !important;
+}
+
+/* Alternative approach: Hide first control-select in header left section */
+.tv-header__left > .tv-control-select:first-of-type {
+  display: none !important;
+}
+
+/* Hide indicator templates button */
+.tv-header__indicators,
+.tv-header__indicators-button,
+button[data-name='indicators'] {
+  display: none !important;
+}
+
+/* Make resolution selector show inline buttons instead of dropdown */
+.tv-header__resolutions,
+.tv-header__resolution-select,
+.tv-header__resolution-control {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 4px !important;
+}
+
+/* Hide the dropdown/select wrapper for resolutions */
+.tv-header__resolutions .tv-control-select,
+.tv-header__resolutions .tv-control-select__wrap,
+.tv-header__resolution-select .tv-control-select {
+  display: none !important;
+}
+
+/* Show individual resolution buttons inline */
+.tv-header__resolutions button,
+.tv-header__resolutions .tv-button,
+.tv-header__resolution-select button,
+.tv-header__resolution-select .tv-button {
+  display: inline-flex !important;
+  margin: 0 2px !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  background-color: #292929 !important;
+  color: #8e8e8e !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.tv-header__resolutions button:hover,
+.tv-header__resolution-select button:hover {
+  background-color: #dee3f1 !important;
+  color: white !important;
+}
+
+.tv-header__resolutions button.tv-button--active,
+.tv-header__resolutions .tv-button--active,
+.tv-header__resolution-select button.tv-button--active {
+  background-color: #1e40c6 !important;
+  color: white !important;
+  border-color: #1e40c6 !important;
+}
+
+/* Alternative: Target resolution control-select directly */
+.tv-header__left .tv-control-select[data-name='resolution'],
+.tv-header__left .tv-control-select:has([data-name='resolution']) {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.tv-header__left
+  .tv-control-select[data-name='resolution']
+  .tv-control-select__wrap {
+  display: none !important;
+}
+
+/* Make timeframes toolbar show inline buttons instead of dropdown */
+.tv-header__timeframes {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 4px !important;
+}
+
+.tv-header__timeframes .tv-control-select {
+  display: none !important;
+}
+
+/* Show individual timeframe buttons inline */
+.tv-header__timeframes button,
+.tv-header__timeframes .tv-button {
+  display: inline-flex !important;
+  margin: 0 2px !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  background-color: #292929 !important;
+  color: #8e8e8e !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.tv-header__timeframes button:hover {
+  background-color: #dee3f1 !important;
+  color: white !important;
+}
+
+.tv-header__timeframes button.tv-button--active {
+  background-color: #1e40c6 !important;
+  color: white !important;
+  border-color: #1e40c6 !important;
+}
